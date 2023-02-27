@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.function.Supplier;
 
-@Mod(modid = PNDevonianMod.MODID, name = PNDevonianMod.NAME, version = PNDevonianMod.VERSION, dependencies = "required-after:lepidodendron@[52.0,)")
+@Mod(modid = PNDevonianMod.MODID, name = PNDevonianMod.NAME, version = PNDevonianMod.VERSION, dependencies = "required-after:lepidodendron@[54.0,)")
 public class PNDevonianMod {
     public static final String MODID = "pndevonian";
     public static final String NAME = "Prehistoric Nature Devonian Dimension";
