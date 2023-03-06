@@ -71,6 +71,7 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
+		protected static final WorldGenFlabellopteris FLABELLOPTERIS_GENERATOR = new WorldGenFlabellopteris();
 		protected static final WorldGenPietzschia PIETZSCHIA_GENERATOR = new WorldGenPietzschia();
 		protected static final WorldGenKeraphyton KERAPHYTON_GENERATOR = new WorldGenKeraphyton();
 
@@ -128,6 +129,16 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PIETZSCHIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 9; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					FLABELLOPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 

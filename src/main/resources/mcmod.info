@@ -3,16 +3,16 @@
     "modid": "pndevonian",
     "name": "Prehistoric Nature Devonian",
     "description": "Adds the Prehistoric Nature Devonian dimension",
-    "version": "2.0",
+    "version": "2.01",
     "mcversion": "1.12.2",
     "url": "",
     "updateUrl": "",
     "authorList": ["Aecht_Rob"],
     "credits": "Prehistoric Nature",
-    "dependencies": ["lepidodendron@[54.0,)"],
+    "dependencies": ["lepidodendron@[55.0,)"],
     "logoFile": "",
     "screenshots": [],
-    "dependencies": ["lepidodendron@[54.0,)"],
+    "dependencies": ["lepidodendron@[55.0,)"],
     "useDependencyInformation": "true"
   }
 ]
