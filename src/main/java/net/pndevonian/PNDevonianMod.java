@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.function.Supplier;
 
-@Mod(modid = PNDevonianMod.MODID, name = PNDevonianMod.NAME, version = PNDevonianMod.VERSION, dependencies = "required-after:lepidodendron@[55.0,)")
+@Mod(modid = PNDevonianMod.MODID, name = PNDevonianMod.NAME, version = PNDevonianMod.VERSION, dependencies = "required-after:lepidodendron@[58.0,)")
 public class PNDevonianMod {
     public static final String MODID = "pndevonian";
     public static final String NAME = "Prehistoric Nature Devonian Dimension";
-    public static final String VERSION = "2.01";
+    public static final String VERSION = "2.02";
     public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("pndevonian:a");
     @SidedProxy(clientSide = "net.pndevonian.ClientProxyPNDevonianMod", serverSide = "net.pndevonian.ServerProxyPNDevonianMod")
     public static IProxyPNDevonianMod proxy;
