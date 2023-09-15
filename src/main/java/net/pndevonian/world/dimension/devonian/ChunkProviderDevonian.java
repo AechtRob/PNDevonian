@@ -59,7 +59,10 @@ public class ChunkProviderDevonian implements IChunkGenerator {
         caveGenerator = new MapGenCaves() {
             @Override
             protected boolean canReplaceBlock(IBlockState a, IBlockState b) {
-                if (a.getBlock() == STONE.getBlock())
+                if (a.getBlock() == STONE.getBlock()
+                        || a.getMaterial() == Material.ROCK
+                        || a.getMaterial() == Material.SAND
+                        || a.getMaterial() == Material.GROUND)
                     return true;
                 return super.canReplaceBlock(a, b);
             }
@@ -74,7 +77,10 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         || biome == BiomeDevonianSwamp.biome) {return;}
                 IBlockState state = data.getBlockState(x, y, z);
                 if (state.getBlock() == STONE.getBlock() || state.getBlock() == biome.topBlock.getBlock()
-                        || state.getBlock() == biome.fillerBlock.getBlock()) {
+                        || state.getBlock() == biome.fillerBlock.getBlock()
+                        || state.getMaterial() == Material.ROCK
+                        || state.getMaterial() == Material.SAND
+                        || state.getMaterial() == Material.GROUND) {
                     if (y - 1 < 10) {
                         data.setBlockState(x, y, z, FLOWING_LAVA);
                     } else {
