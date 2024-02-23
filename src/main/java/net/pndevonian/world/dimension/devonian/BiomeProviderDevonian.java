@@ -13,6 +13,7 @@ import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
+import net.pndevonian.world.biome.devonian.BiomeDevonianOcean;
 import net.pndevonian.world.dimension.devonian.GenLayerDevonian.GenLayerDevonian;
 
 import javax.annotation.Nullable;
@@ -21,14 +22,35 @@ import java.util.Random;
 
 public class BiomeProviderDevonian extends BiomeProvider {
     public static List<Biome> allowedBiomes = Lists.newArrayList(
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_forest")),
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hills")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_brackish")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_brackish")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_coastal")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_floodplain")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_forest")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_gilboa")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_meadow")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_swamp")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_floodplain")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hills")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_forest")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_gilboa")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hypersaline_sinkhole")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hypersaline_sinkhole_transition")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_lycopsid_spinney")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_meadow")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_dead_reef")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_deep")),
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_spikes")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_deep_rocky")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef_transition")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_beach")),
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_springs"))
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_savanna")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_spikes")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_springs")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_swamp")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_vale"))
     );
     public GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
@@ -61,7 +83,7 @@ public class BiomeProviderDevonian extends BiomeProvider {
 
     @Override
     public Biome getBiome(BlockPos pos, Biome defaultBiome) {
-        return this.biomeCache.getBiome(pos.getX(), pos.getZ(), defaultBiome);
+        return this.biomeCache.getBiome(pos.getX(), pos.getZ(), BiomeDevonianOcean.biome);
     }
 
     @Override

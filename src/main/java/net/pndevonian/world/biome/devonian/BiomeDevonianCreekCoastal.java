@@ -171,12 +171,12 @@ public class BiomeDevonianCreekCoastal extends ElementsLepidodendronMod.ModEleme
 					int radius = 3;
 					int jj;
 					int kk;
-					if (radius < 14) {
-						jj = 16 + rand.nextInt(16 - radius - 2) - rand.nextInt(16 - radius - 2);
-						kk = 16 + rand.nextInt(16 - radius - 2) - rand.nextInt(16 - radius - 2);
+					if (radius < 10) {
+						jj = 16 + (int)Math.floor(rand.nextInt(16 - radius - 6)/2) - (int)Math.floor(rand.nextInt(16 - radius - 6)/2);
+						kk = 16 + (int)Math.floor(rand.nextInt(16 - radius - 6)/2) - (int)Math.floor(rand.nextInt(16 - radius - 6)/2);
 					}
 					else {
-						radius = 14;
+						radius = 10;
 						jj = 16;
 						kk = 16;
 					}
@@ -193,12 +193,12 @@ public class BiomeDevonianCreekCoastal extends ElementsLepidodendronMod.ModEleme
 					int radius = 2;
 					int jj;
 					int kk;
-					if (radius < 14) {
-						jj = 16 + rand.nextInt(16 - radius - 2) - rand.nextInt(16 - radius - 2);
-						kk = 16 + rand.nextInt(16 - radius - 2) - rand.nextInt(16 - radius - 2);
+					if (radius < 10) {
+						jj = 16 + (int)Math.floor(rand.nextInt(16 - radius - 6)/2) - (int)Math.floor(rand.nextInt(16 - radius - 6)/2);
+						kk = 16 + (int)Math.floor(rand.nextInt(16 - radius - 6)/2) - (int)Math.floor(rand.nextInt(16 - radius - 6)/2);
 					}
 					else {
-						radius = 14;
+						radius = 10;
 						jj = 16;
 						kk = 16;
 					}
