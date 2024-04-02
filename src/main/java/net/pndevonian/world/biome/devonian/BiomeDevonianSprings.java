@@ -2,6 +2,7 @@
 package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockAsteroxylon;
 import net.lepidodendron.block.BlockCoarseSandyDirtRed;
 import net.lepidodendron.block.BlockCoarseSiltyDirt;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
@@ -59,7 +60,8 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 		}
 
 		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
-		protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
+//		protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
 		protected static final WorldGenCoarseDirt TOPSOIL_GENERATOR = new WorldGenCoarseDirt();
 		//protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
@@ -144,13 +146,14 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PERTICA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					ASTEROXYLON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockAsteroxylon.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

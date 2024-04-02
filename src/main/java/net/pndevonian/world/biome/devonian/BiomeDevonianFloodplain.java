@@ -3,6 +3,9 @@ package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockArchaeopterisLog;
+import net.lepidodendron.block.BlockLeclercqia;
+import net.lepidodendron.block.BlockRhacophyton;
+import net.lepidodendron.block.BlockXihuphyllum;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
@@ -60,7 +63,7 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 
 		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
-		protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
+//		protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
 		protected static final WorldGenTreeLog ARCHAEOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockArchaeopterisLog.block);
     	protected static final WorldGenWattieza WATTIEZA_GENERATOR = new WorldGenWattieza();
 		protected static final WorldGenCalamophyton CALAMOPHYTON_GENERATOR = new WorldGenCalamophyton();
@@ -68,8 +71,9 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 		protected static final WorldGenPsilophyton PSILOPHYTON_GENERATOR = new WorldGenPsilophyton();
 		//protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
 		//protected static final WorldGenFoozia FOOZIA_GENERATOR = new WorldGenFoozia();
-		protected static final WorldGenXihuphyllum XIHUPHYLLUM_GENERATOR = new WorldGenXihuphyllum();
-		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+//		protected static final WorldGenXihuphyllum XIHUPHYLLUM_GENERATOR = new WorldGenXihuphyllum();
+//		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenGuangdedendron GUANGDEDENDRON_GENERATOR = new WorldGenGuangdedendron();
 		protected static final WorldGenCoarseDirt TOPSOIL_GENERATOR = new WorldGenCoarseDirt();
 		protected static final WorldGenSandyDirt SANDY_DIRT_GENERATOR = new WorldGenSandyDirt();
@@ -156,7 +160,7 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					XIHUPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockXihuphyllum.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -165,7 +169,7 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 	            int j = rand.nextInt(16) + 8;
 	            int k = rand.nextInt(16) + 8;
 	            int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-	            RHACOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+	            PLANT_GENERATOR.generate(BlockRhacophyton.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 	        }
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 12; ++i)
@@ -173,7 +177,7 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LECLERCQIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockLeclercqia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

@@ -2,8 +2,7 @@
 package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockArchaeopterisLog;
-import net.lepidodendron.block.BlockPrehistoricGroundBasic;
+import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
@@ -64,11 +63,12 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
-		protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
+//		protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
 		protected static final WorldGenTreeLog ARCHAEOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockArchaeopterisLog.block);
 		protected static final WorldGenTreeLogWater ARCHAEOPTERIS_LOG_WATER_GENERATOR = new WorldGenTreeLogWater(BlockArchaeopterisLog.block);
-		protected static final WorldGenStauropteris STAUROPTERIS_GENERATOR = new WorldGenStauropteris();
-		protected static final WorldGenSphenopteris SPHENOPTERIS_GENERATOR = new WorldGenSphenopteris();
+//		protected static final WorldGenStauropteris STAUROPTERIS_GENERATOR = new WorldGenStauropteris();
+//		protected static final WorldGenSphenopteris SPHENOPTERIS_GENERATOR = new WorldGenSphenopteris();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 
 		protected static final WorldGenSigillariaSmall SIGILLARIA_GENERATOR = new WorldGenSigillariaSmall();
 
@@ -77,11 +77,11 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 		protected static final WorldGenSiltyDirt SILTY_DIRT_GENERATOR = new WorldGenSiltyDirt();
 		protected static final WorldGenLushPrehistoricGround LUSH_DIRT_GENERATOR = new WorldGenLushPrehistoricGround();
 
-		protected static final WorldGenXihuphyllum XIHUPHYLLUM_GENERATOR = new WorldGenXihuphyllum();
+//		protected static final WorldGenXihuphyllum XIHUPHYLLUM_GENERATOR = new WorldGenXihuphyllum();
 		protected static final WorldGenGuangdedendron GUANGDEDENDRON_GENERATOR = new WorldGenGuangdedendron();
 		protected static final WorldGenCalamophyton CALAMOPHYTON_GENERATOR = new WorldGenCalamophyton();
 		protected static final WorldGenAneurophyton ANEUROPHYTON_GENERATOR = new WorldGenAneurophyton();
-		protected static final WorldGenSphenophyllales SPHENOPHYLLALES_GENERATOR = new WorldGenSphenophyllales();
+//		protected static final WorldGenSphenophyllales SPHENOPHYLLALES_GENERATOR = new WorldGenSphenophyllales();
 
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
@@ -191,7 +191,7 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					XIHUPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockXihuphyllum.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -225,7 +225,7 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					RHACOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockRhacophyton.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 92; ++i)
@@ -233,7 +233,7 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					SPHENOPHYLLALES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockSphenophyllales1.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 128; ++i)
@@ -241,7 +241,7 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					STAUROPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockStauropteris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 18; ++i)
@@ -249,7 +249,7 @@ public class BiomeDevonianCreekSwamp extends ElementsLepidodendronMod.ModElement
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					SPHENOPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockSphenopteris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 

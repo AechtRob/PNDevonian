@@ -3,6 +3,7 @@ package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockArchaeopterisLog;
+import net.lepidodendron.block.BlockElkinsia;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
@@ -59,10 +60,11 @@ public class BiomeDevonianForestBeach extends ElementsLepidodendronMod.ModElemen
 		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
 		protected static final WorldGenTreeLog ARCHAEOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockArchaeopterisLog.block);
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
-    	protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
-		protected static final WorldGenElkinsia ELKINSIA_GENERATOR = new WorldGenElkinsia();
+//    	protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
+//		protected static final WorldGenElkinsia ELKINSIA_GENERATOR = new WorldGenElkinsia();
 		protected static final WorldGenRellimia RELLIMIA_GENERATOR = new WorldGenRellimia();
-		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+//		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		//protected static final WorldGenAdoketophyton ADOKETOPHYTON_GENERATOR = new WorldGenAdoketophyton();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
 		protected static final WorldGenSelaginella SELAGINELLA_GENERATOR = new WorldGenSelaginella();
@@ -151,7 +153,7 @@ public class BiomeDevonianForestBeach extends ElementsLepidodendronMod.ModElemen
 	            int j = rand.nextInt(16) + 8;
 	            int k = rand.nextInt(16) + 8;
 	            int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-	            ELKINSIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+	            PLANT_GENERATOR.generate(BlockElkinsia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 	        }
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

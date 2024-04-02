@@ -3,10 +3,13 @@ package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCoarseSandyDirt;
+import net.lepidodendron.block.BlockLeclercqia;
+import net.lepidodendron.block.BlockNematophyta;
 import net.lepidodendron.block.BlockStoneScoria;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -59,9 +62,10 @@ public class BiomeDevonianSavanna extends ElementsLepidodendronMod.ModElement {
 		}
 
 		protected static final WorldGenRockPiles ROCK_PILES_GENERATOR = new WorldGenRockPiles();
-    	protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
+//    	protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
-		protected static final WorldGenLeclercqia LECLERQIA_GENERATOR = new WorldGenLeclercqia();
+//		protected static final WorldGenLeclercqia LECLERQIA_GENERATOR = new WorldGenLeclercqia();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenPsilophyton PSILOPHYTON_GENERATOR = new WorldGenPsilophyton();
 		protected static final WorldGenRellimia RELLIMIA_GENERATOR = new WorldGenRellimia();
 		protected static final WorldGenRedSandyDirt RED_GENERATOR = new WorldGenRedSandyDirt();
@@ -141,7 +145,7 @@ public class BiomeDevonianSavanna extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					NEMATOPHYTA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockNematophyta.block.getDefaultState().withProperty(BlockNematophyta.BlockCustom.FACING, EnumFacing.UP),  worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -168,7 +172,7 @@ public class BiomeDevonianSavanna extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LECLERQIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockLeclercqia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

@@ -3,11 +3,13 @@ package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCoarseSiltyDirt;
+import net.lepidodendron.block.BlockNematophyta;
 import net.lepidodendron.block.BlockPeat;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -64,7 +66,8 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
 		protected static final WorldGenRellimia REILLIMIA_GENERATOR = new WorldGenRellimia();
 		protected static final WorldGenRhynia REHYNIA_GENERATOR = new WorldGenRhynia();
-		protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
+//		protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
 		//protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
 		protected static final WorldGenGravelPatch CLAY_PATCH_GENERATOR = new WorldGenGravelPatch(Blocks.CLAY, 3);
@@ -77,7 +80,7 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 		protected static final WorldGenLushPrehistoricGround LUSH_GENERATOR = new WorldGenLushPrehistoricGround();
 
-		protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
+//		protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -160,7 +163,7 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					NEMATOPHYTA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockNematophyta.block.getDefaultState().withProperty(BlockNematophyta.BlockCustom.FACING, EnumFacing.UP),  worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

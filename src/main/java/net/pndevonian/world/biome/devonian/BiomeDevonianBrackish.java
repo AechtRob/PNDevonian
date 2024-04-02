@@ -4,6 +4,8 @@ package net.pndevonian.world.biome.devonian;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockCoarseSandyDirt;
 import net.lepidodendron.block.BlockCoral;
+import net.lepidodendron.block.BlockKeraphyton;
+import net.lepidodendron.block.BlockPietzschia;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.gen.*;
@@ -72,8 +74,10 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 		protected static final WorldGenFlabellopteris FLABELLOPTERIS_GENERATOR = new WorldGenFlabellopteris();
-		protected static final WorldGenPietzschia PIETZSCHIA_GENERATOR = new WorldGenPietzschia();
-		protected static final WorldGenKeraphyton KERAPHYTON_GENERATOR = new WorldGenKeraphyton();
+//		protected static final WorldGenPietzschia PIETZSCHIA_GENERATOR = new WorldGenPietzschia();
+//		protected static final WorldGenKeraphyton KERAPHYTON_GENERATOR = new WorldGenKeraphyton();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
+
 
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
@@ -128,7 +132,7 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PIETZSCHIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockPietzschia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 
@@ -148,7 +152,7 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					KERAPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockKeraphyton.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 

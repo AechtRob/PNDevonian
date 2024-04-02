@@ -2,6 +2,8 @@
 package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockIbyka;
+import net.lepidodendron.block.BlockLeclercqia;
 import net.lepidodendron.block.BlockPrehistoricGroundBasic;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
@@ -69,10 +71,11 @@ public class BiomeDevonianGilboa extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenXenocladiaShoot XENOCLADIA_GENERATOR = new WorldGenXenocladiaShoot();
 		protected static final WorldGenWattiezaStump STUMP_GENERATOR = new WorldGenWattiezaStump();
 		//protected static final WorldGenXihuphyllum XIHUPHYLLUM_GENERATOR = new WorldGenXihuphyllum();
-		protected static final WorldGenIbyka IBYKA_GENERATOR = new WorldGenIbyka();
+//		protected static final WorldGenIbyka IBYKA_GENERATOR = new WorldGenIbyka();
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
 		protected static final WorldGenRellimia RELLIMIA_GENERATOR = new WorldGenRellimia();
-		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+//		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
+		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		//protected static final WorldGenGuangdedendron GUANGDEDENDRON_GENERATOR = new WorldGenGuangdedendron();
 		protected static final WorldGenCoarseDirt TOPSOIL_GENERATOR = new WorldGenCoarseDirt();
 		protected static final WorldGenSandyDirt SANDY_DIRT_GENERATOR = new WorldGenSandyDirt();
@@ -150,7 +153,7 @@ public class BiomeDevonianGilboa extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					IBYKA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockIbyka.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -177,7 +180,7 @@ public class BiomeDevonianGilboa extends ElementsLepidodendronMod.ModElement {
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LECLERCQIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PLANT_GENERATOR.generate(BlockLeclercqia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
