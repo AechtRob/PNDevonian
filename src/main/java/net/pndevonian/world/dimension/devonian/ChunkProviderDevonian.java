@@ -138,7 +138,10 @@ public class ChunkProviderDevonian implements IChunkGenerator {
         this.random.setSeed((long) x * k + (long) z * l ^ this.world.getSeed());
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, false);
 
-
+        if (!(biome instanceof BiomeDevonian)) {
+            return;
+        }
+        
         if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Meadow) {
             for (int lake = 0; lake < 4; ++lake) {
                 if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
