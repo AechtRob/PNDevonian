@@ -1,6 +1,7 @@
 package net.pndevonian.world.dimension.devonian;
 
 import com.google.common.collect.Lists;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ReportedException;
@@ -165,6 +166,9 @@ public class BiomeProviderDevonian extends BiomeProvider {
                 Biome biome = Biome.getBiome(aint[k1]);
 
                 if (!allowed.contains(biome)) {
+                    return false;
+                }
+                if (!(biome instanceof BiomeDevonian)) {
                     return false;
                 }
             }
