@@ -28,6 +28,10 @@ public class GenLayerDevonianRiverMix extends GenLayer
     public int DEVONIAN_CREEK_SWAMP_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_SWAMP);
     public Biome DEVONIAN_CREEK_BRACKISH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_brackish"));
     public int DEVONIAN_CREEK_BRACKISH_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_BRACKISH);
+    public Biome DEVONIAN_CREEK_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_savanna"));
+    public int DEVONIAN_CREEK_SAVANNA_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_SAVANNA);
+    public Biome DEVONIAN_CREEK_VALE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_vale"));
+    public int DEVONIAN_CREEK_VALE_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_VALE);
 
     //Biomes to exclude for rivers:
     public Biome DEVONIAN_SINKHOLE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hypersaline_sinkhole"));
@@ -98,10 +102,17 @@ public class GenLayerDevonianRiverMix extends GenLayer
                     Biome biome = Biome.getBiome(aint[i]);
                     if (biome instanceof BiomeDevonian) {
                         BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-                        if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest
-                                || biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Vale
-                                || biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Savanna) {
+                        if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest) {
                             aint2[i] = DEVONIAN_CREEK_FOREST_ID;
+                        }
+                        else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Vale) {
+                            aint2[i] = DEVONIAN_CREEK_VALE_ID;
+                        }
+                        else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Savanna) {
+                            aint2[i] = DEVONIAN_CREEK_SAVANNA_ID;
+                        }
+                        else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Brackish) {
+                            aint2[i] = DEVONIAN_CREEK_BRACKISH_ID;
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Brackish) {
                             aint2[i] = DEVONIAN_CREEK_BRACKISH_ID;

@@ -18,10 +18,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeDevonianCreekForest extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:devonian_creek_forest")
+public class BiomeDevonianCreekVale extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:devonian_creek_vale")
 	public static final BiomeGenCustom biome = null;
-	public BiomeDevonianCreekForest(ElementsLepidodendronMod instance) {
+	public BiomeDevonianCreekVale(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -38,8 +38,8 @@ public class BiomeDevonianCreekForest extends ElementsLepidodendronMod.ModElemen
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Forest Creek").setRainfall(0.5F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(1.5F));
-			setRegistryName("devonian_creek_forest");
+			super(new BiomeProperties("Devonian Vale Creek").setRainfall(0.5F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(1.5F));
+			setRegistryName("lepidodendron:devonian_creek_vale");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = 10;
