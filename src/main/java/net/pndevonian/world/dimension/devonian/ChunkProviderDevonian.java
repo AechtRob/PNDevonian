@@ -563,7 +563,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                                         chunkPrimerIn.setBlockState(i1, j1, l, Blocks.CLAY.getDefaultState());
                                                     }
                                                     else {
-                                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockRedClay.block.getDefaultState());
+                                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockClayRed.block.getDefaultState());
                                                     }
                                                     //}
                                                 }
@@ -675,7 +675,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                                     chunkPrimerIn.setBlockState(i1, j1, l, Blocks.CLAY.getDefaultState());
                                                 }
                                                 else {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockRedClay.block.getDefaultState());
+                                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockClayRed.block.getDefaultState());
                                                 }
                                                 //}
                                             }
@@ -730,7 +730,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                                 }
                                                 else {
                                                     if (biome != BiomeDevonianReef.biome && biome != BiomeDevonianReefTransition.biome) {
-                                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockRedClay.block.getDefaultState());
+                                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockClayRed.block.getDefaultState());
                                                     }
                                                 }
                                             }
