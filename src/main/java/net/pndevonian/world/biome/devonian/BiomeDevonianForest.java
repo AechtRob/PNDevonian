@@ -40,7 +40,7 @@ public class BiomeDevonianForest extends ElementsLepidodendronMod.ModElement {
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new Biome.BiomeProperties("Devonian Forest").setRainfall(0.5F).setBaseHeight(0.2F).setHeightVariation(0.6F).setTemperature(1.5F));
-			setRegistryName("devonian_hills");
+			setRegistryName("lepidodendron:devonian_hills");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = 10;

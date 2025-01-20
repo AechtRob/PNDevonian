@@ -39,7 +39,7 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Beach").setRainfall(0.5F).setBaseHeight(0.0F).setHeightVariation(0.007F).setTemperature(1.5F));
-			setRegistryName("devonian_beach");
+			setRegistryName("lepidodendron:devonian_beach");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			fillerBlock = Blocks.SAND.getStateFromMeta(0);
 			decorator.treesPerChunk = 0;

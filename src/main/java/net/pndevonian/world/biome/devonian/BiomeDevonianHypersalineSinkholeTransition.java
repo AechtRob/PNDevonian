@@ -40,7 +40,7 @@ public class BiomeDevonianHypersalineSinkholeTransition extends ElementsLepidode
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Hypersaline Sinkholes").setRainfall(0.5F).setBaseHeight(2.6F).setHeightVariation(0.82F).setTemperature(0.65F).setWaterColor(14745518));
-			setRegistryName("devonian_hypersaline_sinkhole_transition");
+			setRegistryName("lepidodendron:devonian_hypersaline_sinkhole_transition");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);
 			decorator.treesPerChunk = 10;

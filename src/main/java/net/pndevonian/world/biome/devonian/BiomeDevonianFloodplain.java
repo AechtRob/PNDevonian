@@ -42,7 +42,7 @@ public class BiomeDevonianFloodplain extends ElementsLepidodendronMod.ModElement
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new Biome.BiomeProperties("Devonian Dunes").setRainfall(0.5F).setBaseHeight(-0.2F).setHeightVariation(0.1F).setTemperature(1.5F));
-			setRegistryName("devonian_floodplain");
+			setRegistryName("lepidodendron:devonian_floodplain");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			fillerBlock = Blocks.SANDSTONE.getDefaultState();
 			decorator.treesPerChunk = 0;

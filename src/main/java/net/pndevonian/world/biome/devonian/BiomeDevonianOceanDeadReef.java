@@ -45,7 +45,7 @@ public class BiomeDevonianOceanDeadReef extends ElementsLepidodendronMod.ModElem
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Dead Reefs").setRainfall(0.5F).setBaseHeight(-0.80F).setHeightVariation(0.03F).setTemperature(1.5F));
-			setRegistryName("devonian_ocean_dead_reef");
+			setRegistryName("lepidodendron:devonian_ocean_dead_reef");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			this.fillerBlock = Blocks.SAND.getStateFromMeta(0);
 			decorator.treesPerChunk = -999;

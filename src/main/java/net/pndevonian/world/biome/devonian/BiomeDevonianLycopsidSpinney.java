@@ -39,7 +39,7 @@ public class BiomeDevonianLycopsidSpinney extends ElementsLepidodendronMod.ModEl
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Lycopsid Spinney").setRainfall(0.5F).setBaseHeight(0.1F).setHeightVariation(0.0025F).setTemperature(1.5F));
-			setRegistryName("devonian_lycopsid_spinney");
+			setRegistryName("lepidodendron:devonian_lycopsid_spinney");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = 1;

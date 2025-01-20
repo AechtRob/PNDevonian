@@ -41,7 +41,7 @@ public class BiomeDevonianCreekGilboa extends ElementsLepidodendronMod.ModElemen
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Wattieza Forest Creek").setRainfall(0.7F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(1.5F).setWaterColor(9542514));
-			setRegistryName("devonian_creek_gilboa");
+			setRegistryName("lepidodendron:devonian_creek_gilboa");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = -999;

@@ -42,7 +42,7 @@ public class BiomeDevonianOceanDeep extends ElementsLepidodendronMod.ModElement 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Ocean").setRainfall(0.5F).setBaseHeight(-1.80F).setHeightVariation(0.08F).setTemperature(1.5F));
-			setRegistryName("devonian_ocean_deep");
+			setRegistryName("lepidodendron:devonian_ocean_deep");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			this.fillerBlock = Blocks.SAND.getStateFromMeta(0);
 			decorator.treesPerChunk = -999;

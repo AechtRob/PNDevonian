@@ -45,7 +45,7 @@ public class BiomeDevonianCreekCoastal extends ElementsLepidodendronMod.ModEleme
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Coastal Creek").setRainfall(0.5F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(1.5F));
-			setRegistryName("devonian_creek_coastal");
+			setRegistryName("lepidodendron:devonian_creek_coastal");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			this.fillerBlock = Blocks.SAND.getStateFromMeta(0);
 			decorator.treesPerChunk = -999;

@@ -38,7 +38,7 @@ public class BiomeDevonianSpikes extends ElementsLepidodendronMod.ModElement {
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Plateau").setRainfall(0.5F).setBaseHeight(7.5F).setHeightVariation(0.005F).setTemperature(1.5F).setRainDisabled().setWaterColor(14745518));
-			setRegistryName("devonian_spikes");
+			setRegistryName("lepidodendron:devonian_spikes");
 			topBlock = Blocks.STONE.getStateFromMeta(0);
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);
 			decorator.treesPerChunk = -999;

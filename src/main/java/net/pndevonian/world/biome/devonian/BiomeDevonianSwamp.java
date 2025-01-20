@@ -40,7 +40,7 @@ public class BiomeDevonianSwamp extends ElementsLepidodendronMod.ModElement {
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Swamp").setRainfall(0.5F).setBaseHeight(-0.15F).setHeightVariation(0.00F).setRainfall(0.5F).setTemperature(1.5F));
-			setRegistryName("devonian_swamp");
+			setRegistryName("lepidodendron:devonian_swamp");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = 3;

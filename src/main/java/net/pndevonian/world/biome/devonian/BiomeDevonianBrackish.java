@@ -46,7 +46,7 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Brackish Waters").setRainfall(0.5F).setBaseHeight(-0.275F).setHeightVariation(0.03F).setTemperature(1.5F));
-			setRegistryName("devonian_brackish");
+			setRegistryName("lepidodendron:devonian_brackish");
 			topBlock = Blocks.SAND.getDefaultState();
 			this.fillerBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			decorator.treesPerChunk = -999;

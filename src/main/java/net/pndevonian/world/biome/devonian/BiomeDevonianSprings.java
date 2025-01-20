@@ -3,6 +3,7 @@ package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockAsteroxylon;
+import net.lepidodendron.block.BlockClayRed;
 import net.lepidodendron.block.BlockCoarseSandyDirtRed;
 import net.lepidodendron.block.BlockCoarseSiltyDirt;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
@@ -41,9 +42,9 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Devonian Hot Springs").setRainfall(0.2F).setBaseHeight(-0.1F).setHeightVariation(0.08F).setTemperature(2.5F));
-			setRegistryName("devonian_springs");
+			setRegistryName("lepidodendron:devonian_springs");
 			topBlock = BlockCoarseSandyDirtRed.block.getDefaultState();
-			fillerBlock = Blocks.CLAY.getDefaultState();
+			fillerBlock = BlockClayRed.block.getDefaultState();
 			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
@@ -67,7 +68,7 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 		//protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
 		protected static final WorldGenRhynia RHYNIA_GENERATOR = new WorldGenRhynia();
 		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverSandy();
-		protected static final WorldGenGravelPatch CLAY_PATCH_GENERATOR = new WorldGenGravelPatch(Blocks.CLAY, 3);
+		protected static final WorldGenGravelPatch CLAY_PATCH_GENERATOR = new WorldGenGravelPatch(BlockClayRed.block, 3);
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenZosterophyllum ZOSTEROPHYLLUM_GENERATOR = new WorldGenZosterophyllum();
 		protected static final WorldGenAdoketophyton ADOKETOPHYTON_GENERATOR = new WorldGenAdoketophyton();
