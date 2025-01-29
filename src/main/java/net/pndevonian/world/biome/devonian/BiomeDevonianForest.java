@@ -83,6 +83,7 @@ public class BiomeDevonianForest extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
 		//protected static final WorldGenIbyka IBYKA_GENERATOR = new WorldGenIbyka();
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
+		protected static final WorldGenLiverwort LIVERWORT_GENERATOR = new WorldGenLiverwort();
 		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
@@ -162,6 +163,15 @@ public class BiomeDevonianForest extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PUDDLES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 6; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					LIVERWORT_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
