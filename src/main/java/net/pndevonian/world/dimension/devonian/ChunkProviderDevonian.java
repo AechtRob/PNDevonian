@@ -237,12 +237,15 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                 if ((lvt_45_1_ += d16) > 0.0D) {
                                     primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, STONE);
                                 }
-                                else if (i2 * 8 + j2 < (SEALEVEL - 5) && world.getBiome(new BlockPos(i * 4 + k2, i2 * 8 + j2, l * 4 + l2)) == BiomeDevonianSprings.biome) {
+                                else if (i2 * 8 + j2 < SEALEVEL) {
                                     primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, FLUID);
                                 }
-                                else if (i2 * 8 + j2 < SEALEVEL && world.getBiome(new BlockPos(i * 4 + k2, i2 * 8 + j2, l * 4 + l2)) != BiomeDevonianSprings.biome) {
-                                    primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, FLUID);
-                                }
+//                                else if (i2 * 8 + j2 < (SEALEVEL - 5) && world.getBiome(new BlockPos(i * 4 + k2, i2 * 8 + j2, l * 4 + l2)) == BiomeDevonianSprings.biome) {
+//                                    primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, FLUID);
+//                                }
+//                                else if (i2 * 8 + j2 < SEALEVEL && world.getBiome(new BlockPos(i * 4 + k2, i2 * 8 + j2, l * 4 + l2)) != BiomeDevonianSprings.biome) {
+//                                    primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2, FLUID);
+//                                }
                             }
                             d10 += d12;
                             d11 += d13;
