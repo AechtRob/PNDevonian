@@ -32,6 +32,11 @@ public class GenLayerDevonianRiverMix extends GenLayer
     public int DEVONIAN_CREEK_SAVANNA_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_SAVANNA);
     public Biome DEVONIAN_CREEK_VALE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_vale"));
     public int DEVONIAN_CREEK_VALE_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_VALE);
+    public Biome DEVONIAN_CREEK_SPINNEY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_lycopsid_spinney"));
+    public int DEVONIAN_CREEK_SPINNEY_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_SPINNEY);
+
+    public Biome DEVONIAN_SPINNEY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_lycopsid_spinney"));
+    public int DEVONIAN_SPINNEY_ID =  Biome.getIdForBiome(DEVONIAN_SPINNEY);
 
     //Biomes to exclude for rivers:
     public Biome DEVONIAN_SINKHOLE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hypersaline_sinkhole"));
@@ -104,6 +109,9 @@ public class GenLayerDevonianRiverMix extends GenLayer
                         BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
                         if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest) {
                             aint2[i] = DEVONIAN_CREEK_FOREST_ID;
+                        }
+                        else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.ColdGondwana) {
+                            aint2[i] = DEVONIAN_CREEK_SPINNEY_ID;
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Vale) {
                             aint2[i] = DEVONIAN_CREEK_VALE_ID;

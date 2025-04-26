@@ -20,6 +20,7 @@ public class GenLayerDiversifySavanna extends GenLayer {
     private final int Biomes[] = new int[] {
             DEVONIAN_SAVANNA_ID,
             DEVONIAN_SAVANNA_ID,
+            DEVONIAN_SAVANNA_ID,
             DEVONIAN_SPRINGS_ID
     };
 

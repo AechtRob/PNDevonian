@@ -44,13 +44,13 @@ public class GenLayerDevonian {
         biomes = new GenLayerZoom(1000L, biomes);
         //Extend the reefs:
         biomes = new GenLayerDevonianReefExtend(1630L, biomes);
+        biomes = new GenLayerDevonianValeEdge(7920L, biomes);
         biomes = new GenLayerFuzzyZoom(1009L, biomes);
 
         //Edge the reefs and some more diversification
         biomes = new GenLayerDevonianReefEdge(1130L, biomes);
         biomes = new GenLayerSpikesDevonian(950L, biomes);
         biomes = new GenLayerSinkholesDevonian(850L, biomes);
-        biomes = new GenLayerDiversifyForestSpinney(1020L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 

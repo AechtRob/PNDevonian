@@ -40,7 +40,7 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Savanna Creek").setRainfall(0.5F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(2.25F));
+			super(new BiomeProperties("Devonian Fluvial Savanna Creek").setRainfall(0.5F).setBaseHeight(-0.525F).setHeightVariation(0.0F).setTemperature(2.25F));
 			setRegistryName("lepidodendron:devonian_creek_savanna");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirt.block.getDefaultState();
@@ -60,14 +60,17 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 		}
 
 		protected static final WorldGenRockPiles ROCK_PILES_GENERATOR = new WorldGenRockPiles();
-//    	protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
+		//    	protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
-//		protected static final WorldGenLeclercqia LECLERQIA_GENERATOR = new WorldGenLeclercqia();
+		protected static final WorldGenPrototaxites PROTOTAXITES_GENERATOR = new WorldGenPrototaxites();
+		protected static final WorldGenTetraxylopteris TETRAXYLOPTERIS_GENERATOR = new WorldGenTetraxylopteris();
+		//		protected static final WorldGenLeclercqia LECLERQIA_GENERATOR = new WorldGenLeclercqia();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenPsilophyton PSILOPHYTON_GENERATOR = new WorldGenPsilophyton();
 		protected static final WorldGenRellimia RELLIMIA_GENERATOR = new WorldGenRellimia();
 		protected static final WorldGenRedSandyDirt RED_GENERATOR = new WorldGenRedSandyDirt();
 		protected static final WorldGenBlackSandyDirt BLACK_GENERATOR = new WorldGenBlackSandyDirt();
+		protected static final WorldGenSandNearWater SAND_GENERATOR = new WorldGenSandNearWater();
 		protected static final WorldGenPrehistoricGround DIRT_GENERATOR = new WorldGenPrehistoricGround();
 		protected static final WorldGenBacterialCrust CRUST_GENERATOR = new WorldGenBacterialCrust();
 		protected static final WorldGenMicrobialSand MICROBIAL_GENERATOR = new WorldGenMicrobialSand();
@@ -81,17 +84,17 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 	    public void decorate(World worldIn, Random rand, BlockPos pos)
 	    {
 
-	        if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
-	        {
-	        	int i = rand.nextInt(2);
-	            for (int j = 0; j < i; ++j)
-	            {
-	                int k = rand.nextInt(16) + 8;
-	                int l = rand.nextInt(16) + 8;
-	                BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-	                ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
-	            }
-	        }
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
+			{
+				int i = rand.nextInt(2);
+				for (int j = 0; j < i; ++j)
+				{
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(16) + 8;
+					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+					ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
+				}
+			}
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
@@ -128,6 +131,18 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 				}
 			}
 
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
+			{
+				int i = rand.nextInt(24);
+				for (int j = 0; j < i; ++j)
+				{
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(16) + 8;
+					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+					SAND_GENERATOR.generate(worldIn, rand, blockpos);
+				}
+			}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 				for (int i = 0; i < 6; ++i)
 				{
@@ -156,30 +171,30 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PERTICA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					PERTICA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), true);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockLeclercqia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+					TETRAXYLOPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), true);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					RELLIMIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					RELLIMIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), true);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -191,7 +206,16 @@ public class BiomeDevonianCreekSavanna extends ElementsLepidodendronMod.ModEleme
 					CRUST_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-	        super.decorate(worldIn, rand, pos);
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 72; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PROTOTAXITES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			super.decorate(worldIn, rand, pos);
 		}
 
 		@Override

@@ -150,7 +150,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                     }
                 }
             } else {
-                if (this.random.nextInt(4) == 0)
+                if (this.random.nextInt(4) == 0 && ((BiomeDevonian) biome).getBiomeType() != EnumBiomeTypeDevonian.Savanna)
                     if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                             net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
                         int i1 = this.random.nextInt(16) + 8;
@@ -341,6 +341,13 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         d3 = d4;
                     }
 
+                    if (biome == BiomeDevonianVale.biome) {
+                        //Flatten these out:
+                        d4 = -1.0F;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
                     double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
                     if (l1 > 29) {
                         double d6 = (double) ((float) (l1 - 29) / 3.0F);
@@ -407,6 +414,24 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                             iblockstate = BlockCoralBleached.block.getDefaultState();
                         }
 
+                        if (biome == BiomeDevonianForest.biome || biome == BiomeDevonianCreekForest.biome) {
+                            if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeDevonianSwamp.biome || biome == BiomeDevonianCreekSwamp.biome) {
+                            if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(3) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeDevonianSwamp.biome || biome == BiomeDevonianCreekSwamp.biome) {
+                            if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(8) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                        }
+
                         //For the Table mountains biome, make tops mossy and cracked a bit drier:
                         if (biome == BiomeDevonianSpikes.biome
                         ) {
@@ -436,7 +461,9 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         }
 
                         //For the land mountains biomes, make tops mossy and cracked a bit drier:
-                        if (biome == BiomeDevonianHypersalineSinkholeTransition.biome || biome == BiomeDevonianMountains.biome || biome == BiomeDevonianForest.biome || biome == BiomeDevonianVale.biome || biome == BiomeDevonianHypersalineSinkhole.biome
+                        if (biome == BiomeDevonianHypersalineSinkholeTransition.biome || biome == BiomeDevonianMountains.biome || biome == BiomeDevonianForest.biome
+                                || biome == BiomeDevonianVale.biome || biome == BiomeDevonianValeEdge.biome
+                                || biome == BiomeDevonianHypersalineSinkhole.biome
                         ) {
                             //If it's over 85 blocks then start to fill in more as stone
                             //up to 110 where it almost fully stone - sometimes cobble

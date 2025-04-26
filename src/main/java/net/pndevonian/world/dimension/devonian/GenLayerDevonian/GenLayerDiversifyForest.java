@@ -20,6 +20,7 @@ public class GenLayerDiversifyForest extends GenLayer {
     private final int Biomes[] = new int[] {
             DEVONIAN_FOREST_ID,
             DEVONIAN_FOREST_ID,
+            DEVONIAN_FOREST_ID,
             DEVONIAN_MEADOW_ID
     };
 

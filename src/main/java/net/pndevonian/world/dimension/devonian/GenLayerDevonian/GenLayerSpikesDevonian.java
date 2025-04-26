@@ -6,6 +6,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pndevonian.world.biome.devonian.BiomeDevonianForest;
+import net.pndevonian.world.biome.devonian.BiomeDevonianLycopsidSpinney;
 import net.pndevonian.world.biome.devonian.BiomeDevonianSwamp;
 
 public class GenLayerSpikesDevonian extends GenLayer {
@@ -14,6 +15,8 @@ public class GenLayerSpikesDevonian extends GenLayer {
     public  int DEVONIAN_HILLS_ID =  Biome.getIdForBiome(DEVONIAN_HILLS);
     public  Biome DEVONIAN_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_swamp"));
     public  int DEVONIAN_SWAMP_ID =  Biome.getIdForBiome(DEVONIAN_SWAMP);
+    public  Biome DEVONIAN_SPINNEY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_lycopsid_spinney"));
+    public  int DEVONIAN_SPINNEY_ID =  Biome.getIdForBiome(DEVONIAN_SPINNEY);
     public  Biome DEVONIAN_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_spikes"));
     public  int DEVONIAN_SPIKES_ID =  Biome.getIdForBiome(DEVONIAN_SPIKES);
 
@@ -30,6 +33,15 @@ public class GenLayerSpikesDevonian extends GenLayer {
             DEVONIAN_SWAMP_ID,
             DEVONIAN_SWAMP_ID,
             DEVONIAN_SWAMP_ID,
+            DEVONIAN_SPIKES_ID
+    };
+
+    private final int SpinneyBiomes[] = new int[] {
+            DEVONIAN_SPINNEY_ID,
+            DEVONIAN_SPINNEY_ID,
+            DEVONIAN_SPINNEY_ID,
+            DEVONIAN_SPINNEY_ID,
+            DEVONIAN_SPINNEY_ID,
             DEVONIAN_SPIKES_ID
     };
 
@@ -57,6 +69,8 @@ public class GenLayerSpikesDevonian extends GenLayer {
                         output[i] = ForestBiomes[nextInt(ForestBiomes.length)];
                     else if (Biome.getBiome(center) == BiomeDevonianSwamp.biome)
                         output[i] = SwampBiomes[nextInt(SwampBiomes.length)];
+                    else if (Biome.getBiome(center) == BiomeDevonianLycopsidSpinney.biome)
+                        output[i] = SpinneyBiomes[nextInt(SpinneyBiomes.length)];
                     else output[i] = center;
                 } else output[i] = center;
             }

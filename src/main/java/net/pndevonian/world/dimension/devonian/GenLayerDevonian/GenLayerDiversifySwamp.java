@@ -15,12 +15,16 @@ public class GenLayerDiversifySwamp extends GenLayer {
     public int DEVONIAN_SWAMP_ID =  Biome.getIdForBiome(DEVONIAN_SWAMP);
     public Biome DEVONIAN_GILBOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_gilboa"));
     public int DEVONIAN_GILBOA_ID =  Biome.getIdForBiome(DEVONIAN_GILBOA);
+    public Biome DEVONIAN_SPINNEY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_lycopsid_spinney"));
+    public int DEVONIAN_SPINNEY_ID =  Biome.getIdForBiome(DEVONIAN_SPINNEY);
 
     
     private final int Biomes[] = new int[] {
             DEVONIAN_SWAMP_ID,
             DEVONIAN_SWAMP_ID,
-            DEVONIAN_GILBOA_ID
+            DEVONIAN_SWAMP_ID,
+            DEVONIAN_GILBOA_ID,
+            DEVONIAN_SPINNEY_ID
     };
 
     public GenLayerDiversifySwamp(long seed, GenLayer genlayer) {
