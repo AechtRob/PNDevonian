@@ -7,7 +7,7 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerSinkholesDevonian extends GenLayer {
 
-    public  Biome DEVONIAN_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains"));
+    public  Biome DEVONIAN_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains_early"));
     public  int DEVONIAN_MOUNTAINS_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS);
     public  Biome DEVONIAN_SINKHOLES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hypersaline_sinkhole"));
     public  int DEVONIAN_SINKHOLES_ID =  Biome.getIdForBiome(DEVONIAN_SINKHOLES);

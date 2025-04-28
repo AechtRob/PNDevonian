@@ -6,6 +6,7 @@ import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.devonian.*;
 import net.lepidodendron.world.gen.WorldGenDevonianLakes;
 import net.lepidodendron.world.gen.WorldGenOrdovicianBogLakes;
+import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
@@ -147,6 +148,16 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         int j1 = this.random.nextInt(256);
                         int k1 = this.random.nextInt(16) + 8;
                         (new WorldGenOrdovicianBogLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+                    }
+                }
+            } else if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Lagoon) {
+                for (int lake = 0; lake < 3; ++lake) {
+                    if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
+                            net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
+                        int i1 = this.random.nextInt(16) + 8;
+                        int j1 = this.random.nextInt(256);
+                        int k1 = this.random.nextInt(16) + 8;
+                        (new WorldGenDevonianLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
                     }
                 }
             } else {
@@ -420,6 +431,21 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeDevonianLagoon.biome || biome == BiomeDevonianLagoonHelper.biome) {
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = Blocks.SAND.getDefaultState();
+                            }
+                            if (rand.nextInt(7) == 0) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(2) == 0) {
+                                iblockstate = Blocks.STONE.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeDevonianSwamp.biome || biome == BiomeDevonianCreekSwamp.biome) {
                             if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(3) == 0) {
                                 iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
@@ -463,7 +489,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         //For the land mountains biomes, make tops mossy and cracked a bit drier:
                         if (biome == BiomeDevonianHypersalineSinkholeTransition.biome || biome == BiomeDevonianMountains.biome || biome == BiomeDevonianForest.biome
                                 || biome == BiomeDevonianVale.biome || biome == BiomeDevonianValeEdge.biome
-                                || biome == BiomeDevonianHypersalineSinkhole.biome
+                                || biome == BiomeDevonianHypersalineSinkhole.biome || biome == BiomeDevonianMountainsEarly.biome
                         ) {
                             //If it's over 85 blocks then start to fill in more as stone
                             //up to 110 where it almost fully stone - sometimes cobble

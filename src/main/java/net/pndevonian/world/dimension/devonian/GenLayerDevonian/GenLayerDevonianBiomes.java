@@ -12,11 +12,15 @@ public class GenLayerDevonianBiomes extends GenLayer {
     public int DEVONIAN_OCEAN_SHORE_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_SHORE);
     public Biome DEVONIAN_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains"));
     public int DEVONIAN_MOUNTAINS_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS);
+    public Biome DEVONIAN_MOUNTAINS_EARLY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains_early"));
+    public int DEVONIAN_MOUNTAINS_EARLY_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS_EARLY);
 
     private final int Biomes[] = new int[] {
             DEVONIAN_OCEAN_SHORE_ID,
             DEVONIAN_OCEAN_SHORE_ID,
-            DEVONIAN_MOUNTAINS_ID
+            DEVONIAN_OCEAN_SHORE_ID,
+            DEVONIAN_MOUNTAINS_ID,
+            DEVONIAN_MOUNTAINS_EARLY_ID
     };
 
     public GenLayerDevonianBiomes(long seed) {

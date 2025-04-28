@@ -11,26 +11,26 @@ public class GenLayerDevonianBorderMountains extends GenLayer
     public int DEVONIAN_SHALLOW_OCEAN_ID =  Biome.getIdForBiome(DEVONIAN_SHALLOW_OCEAN);
     public Biome DEVONIAN_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains"));
     public int DEVONIAN_MOUNTAINS_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS);
+    public Biome DEVONIAN_MOUNTAINS_EARLY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_mountains_early"));
+    public int DEVONIAN_MOUNTAINS_EARLY_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS_EARLY);
 
     public Biome DEVONIAN_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_savanna"));
     public int DEVONIAN_SAVANNA_ID =  Biome.getIdForBiome(DEVONIAN_SAVANNA);
-    public Biome DEVONIAN_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_swamp"));
-    public int DEVONIAN_SWAMP_ID =  Biome.getIdForBiome(DEVONIAN_SWAMP);
-    public Biome DEVONIAN_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hills"));
+   public Biome DEVONIAN_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_hills"));
     public int DEVONIAN_FOREST_ID =  Biome.getIdForBiome(DEVONIAN_FOREST);
 
+    private final int BiomesEarly[] = new int[] {
+            DEVONIAN_SAVANNA_ID,
+            DEVONIAN_SAVANNA_ID,
+            DEVONIAN_SAVANNA_ID,
+            DEVONIAN_SAVANNA_ID,
+            DEVONIAN_MOUNTAINS_EARLY_ID
+    };
+
     private final int Biomes[] = new int[] {
-            DEVONIAN_SAVANNA_ID,
-            DEVONIAN_SWAMP_ID,
             DEVONIAN_FOREST_ID,
-            DEVONIAN_SAVANNA_ID,
-            DEVONIAN_SWAMP_ID,
             DEVONIAN_FOREST_ID,
-            DEVONIAN_SAVANNA_ID,
-            DEVONIAN_SWAMP_ID,
             DEVONIAN_FOREST_ID,
-            DEVONIAN_SAVANNA_ID,
-            DEVONIAN_SWAMP_ID,
             DEVONIAN_FOREST_ID,
             DEVONIAN_MOUNTAINS_ID
     };
@@ -59,7 +59,23 @@ public class GenLayerDevonianBorderMountains extends GenLayer
                     int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
 
-                    if (!isOcean(l1) && !isOcean(k2) && !isOcean(j3) && !isOcean(i4))
+                    if (k == DEVONIAN_MOUNTAINS_EARLY_ID) {
+                        if (l1 == DEVONIAN_MOUNTAINS_ID
+                            || k2 == DEVONIAN_MOUNTAINS_ID
+                            || j3 == DEVONIAN_MOUNTAINS_ID
+                            || i4 == DEVONIAN_MOUNTAINS_ID) {
+                            aint1[j + i * areaWidth] = DEVONIAN_SHALLOW_OCEAN_ID;
+                        }
+                        else if (!isOcean(l1) && !isOcean(k2) && !isOcean(j3) && !isOcean(i4))
+                        {
+                            aint1[j + i * areaWidth] = k;
+                        }
+                        else
+                        {
+                            aint1[j + i * areaWidth] = BiomesEarly[nextInt(BiomesEarly.length)];
+                        }
+                    }
+                    else if (!isOcean(l1) && !isOcean(k2) && !isOcean(j3) && !isOcean(i4))
                     {
                         aint1[j + i * areaWidth] = k;
                     }

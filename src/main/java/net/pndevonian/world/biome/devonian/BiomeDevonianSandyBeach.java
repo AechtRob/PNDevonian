@@ -42,7 +42,7 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 			setRegistryName("lepidodendron:devonian_beach");
 			topBlock = Blocks.SAND.getStateFromMeta(0);
 			fillerBlock = Blocks.SAND.getStateFromMeta(0);
-			decorator.treesPerChunk = 0;
+			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -58,7 +58,7 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 		}
 		
 
-		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
+		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
 //		protected static final WorldGenRhacophyton RHACOPHYTON_GENERATOR = new WorldGenRhacophyton();
 		protected static final WorldGenTreeLog ARCHAEOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockArchaeopterisLog.block);
@@ -87,7 +87,7 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
-	        return ARCHAEOPTERIS_TREE;
+	        return NULL_TREE;
 	    }
 
 
@@ -95,30 +95,30 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 	    public void decorate(World worldIn, Random rand, BlockPos pos)
 	    {
 
-	        if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-	        {
-	        	int i = rand.nextInt(2);
-
-	            for (int j = 0; j < i; ++j)
-	            {
-	                int k = rand.nextInt(16) + 8;
-	                int l = rand.nextInt(16) + 8;
-	                BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-	                if (Math.random() > 0.5) {ARCHAEOPTERIS_LOG_GENERATOR.generate(worldIn, rand, blockpos);}
-	            }
-	        }
-			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-			{
-				int i = rand.nextInt(2);
-
-				for (int j = 0; j < i; ++j)
-				{
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(16) + 8;
-					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-					if (Math.random() > 0.5) {ROTTEN_LOG_GENERATOR.generate(worldIn, rand, blockpos);}
-				}
-			}
+//	        if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+//	        {
+//	        	int i = rand.nextInt(2);
+//
+//	            for (int j = 0; j < i; ++j)
+//	            {
+//	                int k = rand.nextInt(16) + 8;
+//	                int l = rand.nextInt(16) + 8;
+//	                BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+//	                if (Math.random() > 0.5) {ARCHAEOPTERIS_LOG_GENERATOR.generate(worldIn, rand, blockpos);}
+//	            }
+//	        }
+//			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+//			{
+//				int i = rand.nextInt(2);
+//
+//				for (int j = 0; j < i; ++j)
+//				{
+//					int k = rand.nextInt(16) + 8;
+//					int l = rand.nextInt(16) + 8;
+//					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+//					if (Math.random() > 0.5) {ROTTEN_LOG_GENERATOR.generate(worldIn, rand, blockpos);}
+//				}
+//			}
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 	        for (int i = 0; i < 5; ++i)
 	        {
@@ -257,14 +257,14 @@ public class BiomeDevonianSandyBeach extends ElementsLepidodendronMod.ModElement
 	            ANCIENT_MOSS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 	        }
 
-	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-	        for (int i = 0; i < 8; ++i)
-	        {
-	            int j = rand.nextInt(16) + 8;
-	            int k = rand.nextInt(16) + 8;
-	            int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-	            SELAGINELLA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-	        }
+//	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+//	        for (int i = 0; i < 8; ++i)
+//	        {
+//	            int j = rand.nextInt(16) + 8;
+//	            int k = rand.nextInt(16) + 8;
+//	            int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+//	            SELAGINELLA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+//	        }
 
 //			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 //				for (int i = 0; i < 28; ++i)

@@ -62,7 +62,7 @@ public class BiomeDevonianOcean extends ElementsLepidodendronMod.ModElement {
 			this.spawnableCaveCreatureList.clear();
 		}
 
-		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
+		protected static final WorldGenNullTree ARCHAEOPTERIS_TREE = new WorldGenNullTree(false);
 		//protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
 		protected static final WorldGenCoarseDirt TOPSOIL_GENERATOR = new WorldGenCoarseDirt();
 		protected static final WorldGenSandyDirt SANDYDIRT_GENERATOR = new WorldGenSandyDirt();

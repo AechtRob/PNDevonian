@@ -16,27 +16,23 @@ public class GenLayerDevonian {
             biomes = new GenLayerZoom(2001L, biomes);
         }
 
-        //Surround mountains with either Savanna, Swamp or Forest
+        //Surround mountains with either Savanna  or Forest
         biomes = new GenLayerDevonianBorderMountains(724L, biomes);
+        biomes = new GenLayerDevonianEstuary1(1000L, biomes);
         biomes = new GenLayerZoom(1000L, biomes);
 
-        //Replace Savanna with Hot Springs
-        biomes = new GenLayerDiversifySavanna(328L, biomes);
-        //Replace Forest with Meadow
-        biomes = new GenLayerDiversifyForest(328L, biomes);
-        //Replace Swamp with Gilboa
-        biomes = new GenLayerDiversifySwamp(328L, biomes);
         //If mountains surround, add Vale
         biomes = new GenLayerDevonianVale(1015L, biomes);
+        //Surround with the various coastal-adjacent biomes
+        biomes = new GenLayerDevonianNearSeaBiomes(1400L, biomes);
         //Sort out shallow and deep Oceans
         biomes = new GenLayerDevonianDeepOcean(1109L, biomes);
         biomes = new GenLayerDevonianShallowOcean(1400L, biomes);
+        biomes = new GenLayerDevonianEstuary2(1000L, biomes);
         biomes = new GenLayerFuzzyZoom(1009L, biomes);
 
-        //Surround with Floodplains or brackish sometimes
-        biomes = new GenLayerDevonianNearSeaBiomes(1400L, biomes);
-        //Replace Vale with Hot Springs
-        biomes = new GenLayerDiversifyVale(1430L, biomes);
+        //If mountains surround, add Springs in Early Dev
+        biomes = new GenLayerDevonianSprings(1215L, biomes);
         //Diversify Ocean biomes:
         biomes = new GenLayerDiversifyOcean(1431L, biomes);
         //biomes = new GenLayerZoom(1000L, biomes);
@@ -45,12 +41,14 @@ public class GenLayerDevonian {
         //Extend the reefs:
         biomes = new GenLayerDevonianReefExtend(1630L, biomes);
         biomes = new GenLayerDevonianValeEdge(7920L, biomes);
+        biomes = new GenLayerDevonianEstuary2(1000L, biomes);
         biomes = new GenLayerFuzzyZoom(1009L, biomes);
 
         //Edge the reefs and some more diversification
         biomes = new GenLayerDevonianReefEdge(1130L, biomes);
         biomes = new GenLayerSpikesDevonian(950L, biomes);
         biomes = new GenLayerSinkholesDevonian(850L, biomes);
+        biomes = new GenLayerDevonianEstuary2(1000L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 

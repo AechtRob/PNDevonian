@@ -62,6 +62,7 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 		}
 
 		protected static final WorldGenArchaeopterisTree ARCHAEOPTERIS_TREE = new WorldGenArchaeopterisTree(false);
+		protected static final WorldGenPrototaxites PROTOTAXITES_GENERATOR = new WorldGenPrototaxites();
 //		protected static final WorldGenAsteroxylon ASTEROXYLON_GENERATOR = new WorldGenAsteroxylon();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
@@ -222,6 +223,15 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PSILOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 18; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PROTOTAXITES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
