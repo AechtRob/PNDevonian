@@ -67,6 +67,7 @@ public class BiomeDevonianReef extends ElementsLepidodendronMod.ModElement {
 //		protected static final WorldGenKeraphyton KERAPHYTON_GENERATOR = new WorldGenKeraphyton();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenSelaginella SELAGINELLA_GENERATOR = new WorldGenSelaginella();
+		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverSandy();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -149,6 +150,15 @@ public class BiomeDevonianReef extends ElementsLepidodendronMod.ModElement {
 				int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 				SELAGINELLA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 			}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 28; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					GROUNDCOVER_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
 
 //			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))

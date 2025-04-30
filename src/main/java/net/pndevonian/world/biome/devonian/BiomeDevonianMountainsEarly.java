@@ -40,7 +40,7 @@ public class BiomeDevonianMountainsEarly extends ElementsLepidodendronMod.ModEle
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Mountains EARLY").setRainfall(0.5F).setBaseHeight(2.6F).setHeightVariation(0.82F).setTemperature(0.4F).setWaterColor(14745518));
+			super(new BiomeProperties("Devonian Mountains").setRainfall(0.5F).setBaseHeight(2.6F).setHeightVariation(0.82F).setTemperature(0.4F).setWaterColor(14745518));
 			setRegistryName("lepidodendron:devonian_mountains_early");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);

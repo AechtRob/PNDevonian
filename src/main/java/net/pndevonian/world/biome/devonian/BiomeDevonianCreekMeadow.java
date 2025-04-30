@@ -2,6 +2,7 @@
 package net.pndevonian.world.biome.devonian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockClayBrown;
 import net.lepidodendron.block.BlockCoarseSiltyDirt;
 import net.lepidodendron.block.BlockNematophyta;
 import net.lepidodendron.block.BlockPeat;
@@ -69,11 +70,12 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 		protected static final WorldGenRhynia REHYNIA_GENERATOR = new WorldGenRhynia();
 		protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
 
+		protected static final WorldGenDrepanophycus DREPANOPHYCUS_GENERATOR = new WorldGenDrepanophycus();
 		//		protected static final WorldGenNematophyta NEMATOPHYTA_GENERATOR = new WorldGenNematophyta();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
 		//protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
-		protected static final WorldGenGravelPatch CLAY_PATCH_GENERATOR = new WorldGenGravelPatch(Blocks.CLAY, 3);
+		protected static final WorldGenGravelPatch CLAY_PATCH_GENERATOR = new WorldGenGravelPatch(BlockClayBrown.block, 3);
 		protected static final WorldGenGravelPatch GRAVEL_PATCH_GENERATOR = new WorldGenGravelPatch(Blocks.GRAVEL, 3);
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenBlackSandyDirt SANDY_DIRT_GENERATOR = new WorldGenBlackSandyDirt();
@@ -178,6 +180,15 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					BARAGWANATHIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 24; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DREPANOPHYCUS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

@@ -98,7 +98,6 @@ public class GenLayerDevonianBeach extends GenLayer
 
     private boolean isOcean(int biomeID) {
         if (biomeID == DEVONIAN_OCEAN_ID || biomeID == DEVONIAN_OCEAN_SHORE_ID
-                || biomeID == DEVONIAN_BRACKISH_ID
                 || biomeID == DEVONIAN_REEF_ID
                 || biomeID == DEVONIAN_DEAD_REEF_ID
                 || biomeID == DEVONIAN_REEF_EDGE_ID

@@ -39,7 +39,7 @@ public class BiomeDevonianOceanDeepRocky extends ElementsLepidodendronMod.ModEle
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Rocky Ocean").setRainfall(0.5F).setBaseHeight(-1.90F).setHeightVariation(0.18F).setTemperature(1.5F));
+			super(new BiomeProperties("Devonian Rocky Ocean").setRainfall(0.5F).setBaseHeight(-1.10F).setHeightVariation(0.18F).setTemperature(1.5F));
 			setRegistryName("lepidodendron:devonian_ocean_deep_rocky");
 			topBlock = Blocks.GRAVEL.getStateFromMeta(0);
 			this.fillerBlock = Blocks.STONE.getStateFromMeta(0);
