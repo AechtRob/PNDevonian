@@ -77,6 +77,7 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 //		protected static final WorldGenPietzschia PIETZSCHIA_GENERATOR = new WorldGenPietzschia();
 //		protected static final WorldGenKeraphyton KERAPHYTON_GENERATOR = new WorldGenKeraphyton();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
+		protected static final WorldGenSawdonia SAWDONIA_GENERATOR = new WorldGenSawdonia();
 
 
 
@@ -123,6 +124,15 @@ public class BiomeDevonianBrackish extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PUDDLES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 16; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SAWDONIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 

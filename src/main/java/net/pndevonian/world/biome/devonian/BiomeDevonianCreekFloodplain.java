@@ -84,6 +84,7 @@ public class BiomeDevonianCreekFloodplain extends ElementsLepidodendronMod.ModEl
 		//protected static final WorldGenRhynia RHYNIA_GENERATOR = new WorldGenRhynia();
 		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverSandy();
 		protected static final WorldGenPrehistoricGroundSandy SANDY_GROUND_GENERATOR = new WorldGenPrehistoricGroundSandy();
+		protected static final WorldGenSawdonia SAWDONIA_GENERATOR = new WorldGenSawdonia();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -152,6 +153,15 @@ public class BiomeDevonianCreekFloodplain extends ElementsLepidodendronMod.ModEl
 				int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 				SANDY_GROUND_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 			}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 16; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SAWDONIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
 //			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 //				for (int i = 0; i < 5; ++i)
