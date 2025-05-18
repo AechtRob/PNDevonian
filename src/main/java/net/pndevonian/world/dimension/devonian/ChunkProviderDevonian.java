@@ -63,6 +63,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                 if (a.getBlock() == STONE.getBlock()
                         || a.getMaterial() == Material.ROCK
                         || a.getMaterial() == Material.SAND
+                        || a.getMaterial() == Material.CLAY
                         || a.getMaterial() == Material.GROUND)
                     return true;
                 return super.canReplaceBlock(a, b);
@@ -81,6 +82,7 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         || state.getBlock() == biome.fillerBlock.getBlock()
                         || state.getMaterial() == Material.ROCK
                         || state.getMaterial() == Material.SAND
+                        || state.getMaterial() == Material.CLAY
                         || state.getMaterial() == Material.GROUND) {
                     if (y - 1 < 10) {
                         data.setBlockState(x, y, z, FLOWING_LAVA);
@@ -359,6 +361,13 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         d3 = d4;
                     }
 
+                    if (biome == BiomeDevonianAztec.biome) {
+                        //Flatten these out:
+                        d4 = 1D;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
                     double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
                     if (l1 > 29) {
                         double d6 = (double) ((float) (l1 - 29) / 3.0F);
@@ -455,6 +464,71 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         if (biome == BiomeDevonianSwamp.biome || biome == BiomeDevonianCreekSwamp.biome) {
                             if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(8) == 0) {
                                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeDevonianAztec.biome
+                            || biome == BiomeDevonianCreekAztec.biome
+                            || biome == BiomeDevonianCreekAztecShallow.biome) {
+                            if (j1 <= SEALEVEL - 1) {
+                                if (rand.nextInt(3) != 0) {
+                                    iblockstate = BlockClayBrown.block.getDefaultState();
+                                }
+                                if (rand.nextInt(8) == 0) {
+                                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                                }
+                                if (rand.nextInt(3) == 0) {
+                                    iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                }
+                                if (rand.nextInt(18) == 0) {
+                                    iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
+                                }
+                                if (rand.nextInt(20) == 0) {
+                                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                                }
+
+                                if (rand.nextInt(3) != 0) {
+                                    iblockstate1 = BlockClayBrown.block.getDefaultState();
+                                }
+                                if (rand.nextInt(8) == 0) {
+                                    iblockstate1 = BlockSandGreyWavy.block.getDefaultState();
+                                }
+                                if (rand.nextInt(3) == 0) {
+                                    iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                }
+                                if (rand.nextInt(18) == 0) {
+                                    iblockstate1 = BlockCoarseSandyDirtRed.block.getDefaultState();
+                                }
+                                if (rand.nextInt(20) == 0) {
+                                    iblockstate1 = BlockCoarseSandyDirt.block.getDefaultState();
+                                }
+                            }
+                            else {
+                                if (rand.nextInt(8) == 0) {
+                                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                                }
+                                if (rand.nextInt(9) == 0) {
+                                    iblockstate = BlockClayBrown.block.getDefaultState();
+                                }
+                                if (rand.nextInt(7) == 0) {
+                                    iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                }
+                                if (rand.nextInt(22) == 0) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
+
+                                if (rand.nextInt(8) == 0) {
+                                    iblockstate1 = BlockSandGreyWavy.block.getDefaultState();
+                                }
+                                if (rand.nextInt(9) == 0) {
+                                    iblockstate1 = BlockClayBrown.block.getDefaultState();
+                                }
+                                if (rand.nextInt(7) == 0) {
+                                    iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                }
+                                if (rand.nextInt(22) == 0) {
+                                    iblockstate1 = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
                             }
                         }
 

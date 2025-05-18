@@ -13,7 +13,9 @@ public class GenLayerDevonianNearSeaBiomes extends GenLayer
     public Biome DEVONIAN_OCEAN_SHORE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean"));
     public int DEVONIAN_OCEAN_SHORE_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_SHORE);
 
-    public Biome DEVONIAN_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_floodplain"));
+    public Biome DEVONIAN_DUNES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_floodplain"));
+    public int DEVONIAN_DUNES_ID =  Biome.getIdForBiome(DEVONIAN_DUNES);
+    public Biome DEVONIAN_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_aztec"));
     public int DEVONIAN_FLOODPLAIN_ID =  Biome.getIdForBiome(DEVONIAN_FLOODPLAIN);
     public Biome DEVONIAN_BRACKISH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_brackish"));
     public int DEVONIAN_BRACKISH_ID =  Biome.getIdForBiome(DEVONIAN_BRACKISH);
@@ -33,6 +35,7 @@ public class GenLayerDevonianNearSeaBiomes extends GenLayer
 
     private final int ShoreBiomes[] = new int[] {
             DEVONIAN_FLOODPLAIN_ID,
+            DEVONIAN_DUNES_ID,
             DEVONIAN_BRACKISH_ID,
             DEVONIAN_SWAMP_ID,
             DEVONIAN_GLADES_ID

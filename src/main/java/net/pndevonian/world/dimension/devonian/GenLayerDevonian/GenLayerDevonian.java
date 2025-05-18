@@ -70,14 +70,21 @@ public class GenLayerDevonian {
         GenLayer genlayercreek6 = new GenLayerSmooth(1000L, genlayercreek5);
         GenLayer genlayercreekfinal = new GenLayerDevonianRiverMix(100L, biomes, genlayercreek6);
 
-        GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, genlayercreekfinal);
+        //Additional streams in Aztec Flats:
+        GenLayer genlayerstream = new GenLayerRiverInit(110L, biomes);
+        GenLayer genlayerstream2 = GenLayerZoom.magnify(1100L, genlayerstream, 3);
+        GenLayer genlayerstream4 = new GenLayerRiver(11L, genlayerstream2);
+        GenLayer genlayerstream5 = new GenLayerSmooth(1100L, genlayerstream4);
+        GenLayer genlayerstreamfinal = new GenLayerDevonianFloodplainRiverMixSpecial(1100L, genlayercreekfinal, genlayerstream5);
 
-        genlayercreekfinal.initWorldGenSeed(seed);
+        GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, genlayerstreamfinal);
+
+        genlayerstreamfinal.initWorldGenSeed(seed);
         genlayervoronoizoom.initWorldGenSeed(seed);
         biomes.initWorldGenSeed(seed);
 
         genlayervoronoizoom.initWorldGenSeed(seed);
-        return (new GenLayer[] { genlayercreekfinal, genlayervoronoizoom, genlayercreekfinal });
+        return (new GenLayer[] { genlayerstreamfinal, genlayervoronoizoom, genlayerstreamfinal });
     }
 
 }
