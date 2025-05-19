@@ -49,6 +49,7 @@ public class GenLayerDevonian {
         biomes = new GenLayerSpikesDevonian(950L, biomes);
         biomes = new GenLayerSinkholesDevonian(850L, biomes);
         biomes = new GenLayerDevonianEstuary2(1000L, biomes);
+        biomes = new GenLayerDiversifyForestPools(3L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 

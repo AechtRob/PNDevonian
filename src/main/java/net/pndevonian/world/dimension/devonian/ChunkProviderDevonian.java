@@ -162,6 +162,16 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         (new WorldGenDevonianLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
                     }
                 }
+            } else if (biome == BiomeDevonianForestPools.biome) {
+                for (int lake = 0; lake < 7; ++lake) {
+                    if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
+                            net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
+                        int i1 = this.random.nextInt(16) + 8;
+                        int j1 = this.random.nextInt(256);
+                        int k1 = this.random.nextInt(16) + 8;
+                        (new WorldGenDevonianLakes(Blocks.WATER)).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+                    }
+                }
             } else {
                 if (this.random.nextInt(4) == 0 && ((BiomeDevonian) biome).getBiomeType() != EnumBiomeTypeDevonian.Savanna)
                     if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
@@ -458,6 +468,31 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         if (biome == BiomeDevonianSwamp.biome || biome == BiomeDevonianCreekSwamp.biome) {
                             if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState() && rand.nextInt(3) == 0) {
                                 iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeDevonianForestPools.biome) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(5) == 0) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(15) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(10) == 0) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate1 = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(5) == 0) {
+                                iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(15) == 0) {
+                                iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
                             }
                         }
 
