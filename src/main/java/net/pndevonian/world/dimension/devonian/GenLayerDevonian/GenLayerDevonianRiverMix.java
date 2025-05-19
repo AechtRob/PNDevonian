@@ -16,7 +16,11 @@ public class GenLayerDevonianRiverMix extends GenLayer
     //Creeks to use:
     public Biome DEVONIAN_CREEK_COAST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_coastal"));
     public int DEVONIAN_CREEK_COAST_ID = Biome.getIdForBiome(DEVONIAN_CREEK_COAST);
-    public Biome DEVONIAN_CREEK_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_floodplain"));
+    public Biome DEVONIAN_CREEK_DUNES= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_floodplain"));
+    public int DEVONIAN_CREEK_DUNES_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_DUNES);
+    public Biome DEVONIAN_DUNES= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_floodplain"));
+    public int DEVONIAN_DUNES_ID =  Biome.getIdForBiome(DEVONIAN_DUNES);
+    public Biome DEVONIAN_CREEK_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_aztec"));
     public int DEVONIAN_CREEK_FLOODPLAIN_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_FLOODPLAIN);
     public Biome DEVONIAN_CREEK_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_forest"));
     public int DEVONIAN_CREEK_FOREST_ID =  Biome.getIdForBiome(DEVONIAN_CREEK_FOREST);
@@ -135,7 +139,12 @@ public class GenLayerDevonianRiverMix extends GenLayer
                             aint2[i] = DEVONIAN_CREEK_MEADOW_ID;
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Floodplain) {
-                            aint2[i] = DEVONIAN_CREEK_FLOODPLAIN_ID;
+                            if (aint[i] == DEVONIAN_DUNES_ID) {
+                                aint2[i] = DEVONIAN_CREEK_DUNES_ID;
+                            }
+                            else {
+                                aint2[i] = DEVONIAN_CREEK_FLOODPLAIN_ID;
+                            }
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Gilboa) {
                             aint2[i] = DEVONIAN_CREEK_GILBOA_ID;

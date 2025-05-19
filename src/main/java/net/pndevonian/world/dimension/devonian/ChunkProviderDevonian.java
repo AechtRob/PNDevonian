@@ -478,7 +478,12 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     iblockstate = BlockSandGreyWavy.block.getDefaultState();
                                 }
                                 if (rand.nextInt(3) == 0) {
-                                    iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                    if (rand.nextBoolean()) {
+                                        iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                                    }
+                                    else {
+                                        iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                    }
                                 }
                                 if (rand.nextInt(18) == 0) {
                                     iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
@@ -494,7 +499,12 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     iblockstate1 = BlockSandGreyWavy.block.getDefaultState();
                                 }
                                 if (rand.nextInt(3) == 0) {
-                                    iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                    if (rand.nextBoolean()) {
+                                        iblockstate1 = BlockCoarseSiltyDirt.block.getDefaultState();
+                                    }
+                                    else {
+                                        iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                    }
                                 }
                                 if (rand.nextInt(18) == 0) {
                                     iblockstate1 = BlockCoarseSandyDirtRed.block.getDefaultState();
@@ -511,7 +521,12 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     iblockstate = BlockClayBrown.block.getDefaultState();
                                 }
                                 if (rand.nextInt(7) == 0) {
-                                    iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                    if (rand.nextBoolean()) {
+                                        iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                                    }
+                                    else {
+                                        iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                    }
                                 }
                                 if (rand.nextInt(22) == 0) {
                                     iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
@@ -524,7 +539,12 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     iblockstate1 = BlockClayBrown.block.getDefaultState();
                                 }
                                 if (rand.nextInt(7) == 0) {
-                                    iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                    if (rand.nextBoolean()) {
+                                        iblockstate1 = BlockCoarseSiltyDirt.block.getDefaultState();
+                                    }
+                                    else {
+                                        iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
+                                    }
                                 }
                                 if (rand.nextInt(22) == 0) {
                                     iblockstate1 = BlockCoarseSandyDirtGrey.block.getDefaultState();
