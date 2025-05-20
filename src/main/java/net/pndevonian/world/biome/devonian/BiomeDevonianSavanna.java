@@ -42,7 +42,7 @@ public class BiomeDevonianSavanna extends ElementsLepidodendronMod.ModElement {
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Fluvial Savanna").setRainfall(0.5F).setBaseHeight(-0.09F).setHeightVariation(0.1F).setTemperature(2.25F));
+			super(new BiomeProperties("Devonian Fluvial Desert").setRainfall(0.5F).setBaseHeight(-0.01F).setHeightVariation(0.05F).setTemperature(2.25F));
 			setRegistryName("lepidodendron:devonian_savanna");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirt.block.getDefaultState();
