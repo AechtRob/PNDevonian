@@ -587,6 +587,38 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                             }
                         }
 
+                        //For the Gilboa lakes biomes, make hills craggy:
+                        if (biome == BiomeDevonianGilboa.biome
+                                || biome == BiomeDevonianGilboaLake.biome
+                                || biome == BiomeDevonianCreekGilboa.biome
+                        ) {
+                            //If it's over 64 blocks then start to fill in more as stone
+                            //up to 88 where it almost fully stone - sometimes cobble
+                            int minHeight = 64;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 88 - j1);
+                                double stoneFactor = (double) j2 / (88D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    if (rand.nextInt(8) == 0) {
+                                        iblockstate = Blocks.STONE.getStateFromMeta(1);
+                                    }
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.STONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                                    if (rand.nextInt(8) == 0) {
+                                        iblockstate1 = Blocks.STONE.getStateFromMeta(1);
+                                    }
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.STONE.getDefaultState();
+                                    }
+                                }
+                            }
+                        }
+
                         //For the Table mountains biome, make tops mossy and cracked a bit drier:
                         if (biome == BiomeDevonianSpikes.biome
                         ) {

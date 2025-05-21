@@ -36,6 +36,7 @@ public class GenLayerDevonian {
         //Diversify Ocean biomes:
         biomes = new GenLayerDiversifyOcean(1431L, biomes);
         //biomes = new GenLayerZoom(1000L, biomes);
+        biomes = new GenLayerDiversifyGilboaLake(862L, biomes);
 
         biomes = new GenLayerZoom(1000L, biomes);
         //Extend the reefs:
