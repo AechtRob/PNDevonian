@@ -63,7 +63,9 @@ public class BiomeProviderDevonian extends BiomeProvider {
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_creek_brackish")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_dead_reef")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_vale")),
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_vale_edge"))
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_vale_edge")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef2")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_algae"))
             );
     public GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */
