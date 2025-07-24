@@ -706,6 +706,18 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                         break;
                                 }
                             }
+                            else if (biome == BiomeDevonianOceanAlgae.biome) {
+                                chunkPrimerIn.setBlockState(i1, j1, l, BlockSandGrey.block.getDefaultState());
+                                if (rand.nextInt(6) == 0) {
+                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockClayBrown.block.getDefaultState());
+                                }
+                                if (rand.nextInt(8) == 0) {
+                                    chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1 = Blocks.GRAVEL.getDefaultState());
+                                }
+                                if (rand.nextInt(8) == 0) {
+                                    chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1 = BlockCarboniferousMud.block.getDefaultState());
+                                }
+                            }
                             else if (biome == BiomeDevonianMeadow.biome) {
                                 if (rand.nextInt(3) == 0) {
                                     chunkPrimerIn.setBlockState(i1, j1, l, BlockSandBlackWavy.block.getDefaultState());

@@ -69,6 +69,10 @@ public class GenLayerDevonianRiverMix extends GenLayer
     public int DEVONIAN_OCEAN_ROCKY_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_ROCKY);
     public Biome DEVONIAN_GILBOA_LAKE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_gilboa_lake"));
     public int DEVONIAN_GILBOA_LAKE_ID =  Biome.getIdForBiome(DEVONIAN_GILBOA_LAKE);
+    public Biome DEVONIAN_REEF2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef2"));
+    public int DEVONIAN_OCEAN_REEF2_ID = Biome.getIdForBiome(DEVONIAN_REEF2);
+    public Biome DEVONIAN_OCEAN_ALGAE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_algae"));
+    public int DEVONIAN_OCEAN_ALGAE_ID = Biome.getIdForBiome(DEVONIAN_OCEAN_ALGAE);
 
     public GenLayerDevonianRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -108,6 +112,8 @@ public class GenLayerDevonianRiverMix extends GenLayer
                         || aint[i] == DEVONIAN_OCEAN_ROCKY_ID
                         || aint[i] == DEVONIAN_CREEK_FOREST_POOLS_ID
                         || aint[i] == DEVONIAN_GILBOA_LAKE_ID
+                        || aint[i] == DEVONIAN_OCEAN_ALGAE_ID
+                        || aint[i] == DEVONIAN_OCEAN_REEF2_ID
                 )
                 {
                     aint2[i] = aint[i];

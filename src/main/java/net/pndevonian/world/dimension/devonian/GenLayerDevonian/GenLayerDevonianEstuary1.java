@@ -22,6 +22,11 @@ public class GenLayerDevonianEstuary1 extends GenLayer
     public int DEVONIAN_REEF_EDGE_ID =  Biome.getIdForBiome(DEVONIAN_REEF_EDGE);
     public Biome DEVONIAN_OCEAN_ROCKY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_deep_rocky"));
     public int DEVONIAN_OCEAN_ROCKY_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_ROCKY);
+    public Biome DEVONIAN_REEF2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef2"));
+    public int DEVONIAN_OCEAN_REEF2_ID = Biome.getIdForBiome(DEVONIAN_REEF2);
+    public Biome DEVONIAN_OCEAN_ALGAE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_algae"));
+    public int DEVONIAN_OCEAN_ALGAE_ID = Biome.getIdForBiome(DEVONIAN_OCEAN_ALGAE);
+
 
     public Biome DEVONIAN_WET_MEADOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_meadow"));
     public int DEVONIAN_WET_MEADOW_ID =  Biome.getIdForBiome(DEVONIAN_WET_MEADOW);
@@ -107,7 +112,9 @@ public class GenLayerDevonianEstuary1 extends GenLayer
                 || biomeID == DEVONIAN_REEF_ID
                 || biomeID == DEVONIAN_DEAD_REEF_ID
                 || biomeID == DEVONIAN_REEF_EDGE_ID
-                || biomeID == DEVONIAN_OCEAN_ROCKY_ID) {
+                || biomeID == DEVONIAN_OCEAN_ROCKY_ID
+                || biomeID == DEVONIAN_OCEAN_ALGAE_ID
+                || biomeID == DEVONIAN_OCEAN_REEF2_ID) {
             return true;
         }
         return false;

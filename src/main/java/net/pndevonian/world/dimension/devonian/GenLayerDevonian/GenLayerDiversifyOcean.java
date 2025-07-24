@@ -19,15 +19,21 @@ public class GenLayerDiversifyOcean extends GenLayer {
     public int DEVONIAN_REEF_ID =  Biome.getIdForBiome(DEVONIAN_REEF);
     public Biome DEVONIAN_OCEAN_ROCKY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_deep_rocky"));
     public int DEVONIAN_OCEAN_ROCKY_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_ROCKY);
+    public Biome DEVONIAN_OCEAN_ALGAE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_algae"));
+    public int DEVONIAN_OCEAN_ALGAE_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_ALGAE);
+    public Biome DEVONIAN_REEF2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_reef2"));
+    public int DEVONIAN_REEF2_ID =  Biome.getIdForBiome(DEVONIAN_REEF2);
 
     private final int OceanBiomes[] = new int[] {
             DEVONIAN_OCEAN_ID,
             DEVONIAN_OCEAN_ID,
+            DEVONIAN_OCEAN_ID,
             DEVONIAN_OCEAN_ROCKY_ID,
             DEVONIAN_OCEAN_ROCKY_ID,
-            DEVONIAN_OCEAN_ROCKY_ID,
+            DEVONIAN_OCEAN_ALGAE_ID,
             DEVONIAN_OCEAN_DEAD_ID,
-            DEVONIAN_REEF_ID
+            DEVONIAN_REEF_ID,
+            DEVONIAN_REEF2_ID
     };
 
     public GenLayerDiversifyOcean(long seed, GenLayer genlayer) {
