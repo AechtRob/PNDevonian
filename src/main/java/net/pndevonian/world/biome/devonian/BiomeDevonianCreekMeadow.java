@@ -64,10 +64,10 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 		protected static final WorldGenCooksonia COOKSONIA_GENERATOR = new WorldGenCooksonia();
 		protected static final WorldGenZosterophyllum ZOSTEROPHYLLUM_GENERATOR = new WorldGenZosterophyllum();
 		protected static final WorldGenAdoketophyton ADOKETOPHYTON_GENERATOR = new WorldGenAdoketophyton();
-		protected static final WorldGenFoozia FOOZIA_GENERATOR = new WorldGenFoozia();
-		protected static final WorldGenPertica PERTICA_GENERATOR = new WorldGenPertica();
-		protected static final WorldGenRellimia REILLIMIA_GENERATOR = new WorldGenRellimia();
-		protected static final WorldGenRhynia REHYNIA_GENERATOR = new WorldGenRhynia();
+		protected static final WorldGenGosslingia GOSSLINGIA_GENERATOR = new WorldGenGosslingia();
+		protected static final WorldGenDiscalis DISCALIS_GENERATOR = new WorldGenDiscalis();
+		protected static final WorldGenStachyophyton STACHYOPHYTON_GENERATOR = new WorldGenStachyophyton();
+		protected static final WorldGenCrenaticaulis CRENATICAULIS_GENERATOR = new WorldGenCrenaticaulis();
 		protected static final WorldGenBaragwanathia BARAGWANATHIA_GENERATOR = new WorldGenBaragwanathia();
 
 		protected static final WorldGenDrepanophycus DREPANOPHYCUS_GENERATOR = new WorldGenDrepanophycus();
@@ -245,41 +245,41 @@ public class BiomeDevonianCreekMeadow extends ElementsLepidodendronMod.ModElemen
 					ADOKETOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-//				for (int i = 0; i < 24; ++i)
-//				{
-//					int j = rand.nextInt(16) + 8;
-//					int k = rand.nextInt(16) + 8;
-//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-//					FOOZIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-//				}
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 36; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DISCALIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
-//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-//				for (int i = 0; i < 24; ++i)
-//				{
-//					int j = rand.nextInt(16) + 8;
-//					int k = rand.nextInt(16) + 8;
-//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-//					PERTICA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-//				}
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 36; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					GOSSLINGIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
-//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-//				for (int i = 0; i < 24; ++i)
-//				{
-//					int j = rand.nextInt(16) + 8;
-//					int k = rand.nextInt(16) + 8;
-//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-//					REILLIMIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-//				}
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 36; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					STACHYOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
-//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-//				for (int i = 0; i < 36; ++i)
-//				{
-//					int j = rand.nextInt(16) + 8;
-//					int k = rand.nextInt(16) + 8;
-//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-//					REHYNIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-//				}
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 36; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					CRENATICAULIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 36; ++i)

@@ -88,6 +88,9 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenLiverwort LIVERWORT_GENERATOR = new WorldGenLiverwort();
 		protected static final WorldGenPsilophyton PSILOPHYTON_GENERATOR = new WorldGenPsilophyton();
 		protected static final WorldGenSawdonia SAWDONIA_GENERATOR = new WorldGenSawdonia();
+		protected static final WorldGenNothia NOTHIA_GENERATOR = new WorldGenNothia();
+		protected static final WorldGenVentarura VENTARURA_GENERATOR = new WorldGenVentarura();
+		protected static final WorldGenTrichopherophyton TRICHOPHEROPHYTON_GENERATOR = new WorldGenTrichopherophyton();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -179,7 +182,7 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
+				for (int i = 0; i < 22; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -188,7 +191,7 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
+				for (int i = 0; i < 22; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -206,7 +209,7 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 16; ++i)
+				for (int i = 0; i < 17; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -222,24 +225,18 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					RHYNIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
-//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-//				for (int i = 0; i < 6; ++i)
-//				{
-//					int j = rand.nextInt(16) + 8;
-//					int k = rand.nextInt(16) + 8;
-//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-//					ADOKETOPHYTON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
-//				}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 15; ++i)
+				for (int i = 0; i < 22; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					ZOSTEROPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 20; ++i)
+				for (int i = 0; i < 28; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -257,12 +254,39 @@ public class BiomeDevonianSprings extends ElementsLepidodendronMod.ModElement {
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 16; ++i)
+				for (int i = 0; i < 22; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					SAWDONIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 22; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					NOTHIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 22; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					VENTARURA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 22; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					VENTARURA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
