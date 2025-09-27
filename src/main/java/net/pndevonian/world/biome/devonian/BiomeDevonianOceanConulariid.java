@@ -72,7 +72,7 @@ public class BiomeDevonianOceanConulariid extends ElementsLepidodendronMod.ModEl
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
-				if (rand.nextInt(5) == 0)
+				if (rand.nextInt(4) == 0)
 				{
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;

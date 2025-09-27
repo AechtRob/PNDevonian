@@ -736,9 +736,6 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                             else if (biome == BiomeDevonianOceanConulariid.biome) {
                                 if (j1 <= SEALEVEL - 1) {
                                     chunkPrimerIn.setBlockState(i1, j1, l, BlockSandWavy.block.getDefaultState());
-                                    if (rand.nextInt(3) == 0) {
-                                        chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
-                                    }
                                     if (rand.nextInt(8) == 0) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, BlockSandGreyWavy.block.getDefaultState());
                                     }
@@ -749,6 +746,9 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     }
                                     if (rand.nextInt(5) <= 1) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, BlockSandRedWavy.block.getDefaultState());
+                                    }
+                                    if (rand.nextInt(3) == 0) {
+                                        chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
                                     }
                                 }
                             }
