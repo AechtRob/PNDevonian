@@ -18,6 +18,8 @@ public class GenLayerDevonianReefExtend extends GenLayer
     public int DEVONIAN_OCEAN_REEF2_ID = Biome.getIdForBiome(DEVONIAN_REEF2);
     public Biome DEVONIAN_OCEAN_ALGAE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_algae"));
     public int DEVONIAN_OCEAN_ALGAE_ID = Biome.getIdForBiome(DEVONIAN_OCEAN_ALGAE);
+    public Biome DEVONIAN_CONULARIID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_conulariid"));
+    public int DEVONIAN_CONULARIID_ID =  Biome.getIdForBiome(DEVONIAN_CONULARIID);
 
     public Biome DEVONIAN_OCEAN_DEAD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_ocean_dead_reef"));
     public int DEVONIAN_OCEAN_DEAD_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_DEAD);
@@ -68,7 +70,8 @@ public class GenLayerDevonianReefExtend extends GenLayer
     public boolean isOcean(int biomeID) {
         if (biomeID == DEVONIAN_OCEAN_SHORE_ID || biomeID == DEVONIAN_OCEAN_ID
                 || biomeID == DEVONIAN_OCEAN_DEAD_ID || biomeID == DEVONIAN_OCEAN_ROCKY_ID
-                || biomeID == DEVONIAN_OCEAN_ALGAE_ID || biomeID == DEVONIAN_OCEAN_REEF2_ID) {
+                || biomeID == DEVONIAN_OCEAN_ALGAE_ID || biomeID == DEVONIAN_OCEAN_REEF2_ID
+                || biomeID == DEVONIAN_CONULARIID_ID) {
             return true;
         }
         return false;

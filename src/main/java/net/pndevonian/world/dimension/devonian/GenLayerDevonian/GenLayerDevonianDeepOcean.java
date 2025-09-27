@@ -14,7 +14,9 @@ public class GenLayerDevonianDeepOcean extends GenLayer
     public  int DEVONIAN_OCEAN_SHORE_ID =  Biome.getIdForBiome(DEVONIAN_OCEAN_SHORE);
     public  Biome DEVONIAN_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_spikes"));
     public  int DEVONIAN_MOUNTAINS_ID =  Biome.getIdForBiome(DEVONIAN_MOUNTAINS);
-    
+    public Biome DEVONIAN_CONULARIID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_conulariid"));
+    public int DEVONIAN_CONULARIID_ID =  Biome.getIdForBiome(DEVONIAN_CONULARIID);
+
     public GenLayerDevonianDeepOcean(long seed, GenLayer genLayer)
     {
         super(seed);
@@ -59,6 +61,11 @@ public class GenLayerDevonianDeepOcean extends GenLayer
                             || i2 == DEVONIAN_MOUNTAINS_ID
                             || j2 == DEVONIAN_MOUNTAINS_ID
                             || k2 == DEVONIAN_MOUNTAINS_ID
+                        )
+                                || (l1 == DEVONIAN_CONULARIID_ID
+                                || i2 == DEVONIAN_CONULARIID_ID
+                                || j2 == DEVONIAN_CONULARIID_ID
+                                || k2 == DEVONIAN_CONULARIID_ID
                         )
                     );
                     if (flag)

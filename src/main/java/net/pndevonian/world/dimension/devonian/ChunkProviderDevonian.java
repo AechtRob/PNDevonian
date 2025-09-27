@@ -378,6 +378,13 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         d3 = d4;
                     }
 
+                    if (biome == BiomeDevonianOceanConulariid.biome) {
+                        //Flatten these out:
+                        d4 = 0D;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
                     double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
                     if (l1 > 29) {
                         double d6 = (double) ((float) (l1 - 29) / 3.0F);
@@ -724,6 +731,25 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                 }
                                 else {
                                     chunkPrimerIn.setBlockState(i1, j1, l, BlockPeat.block.getDefaultState());
+                                }
+                            }
+                            else if (biome == BiomeDevonianOceanConulariid.biome) {
+                                if (j1 <= SEALEVEL - 1) {
+                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockSandWavy.block.getDefaultState());
+                                    if (rand.nextInt(3) == 0) {
+                                        chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
+                                    }
+                                    if (rand.nextInt(8) == 0) {
+                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockSandGreyWavy.block.getDefaultState());
+                                    }
+                                    if (rand.nextInt(3) == 0) {
+                                        if (rand.nextBoolean()) {
+                                            chunkPrimerIn.setBlockState(i1, j1, l, BlockCoarseSiltyDirt.block.getDefaultState());
+                                        }
+                                    }
+                                    if (rand.nextInt(5) <= 1) {
+                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockSandRedWavy.block.getDefaultState());
+                                    }
                                 }
                             }
                             else if ((j1 < i - 10 && Math.random() > 0.5)) {
