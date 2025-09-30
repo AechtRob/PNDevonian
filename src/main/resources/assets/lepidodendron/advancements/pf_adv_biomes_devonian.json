@@ -273,6 +273,18 @@
 		"conditions": {
 		"biome": "lepidodendron:devonian_hypersaline_sinkhole_transition"
 		}
+		},
+		"devonian_conulariid": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_conulariid"
+			}
+		},
+		"devonian_conulariid_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_conulariid_land"
+			}
 		}
 	},
 	"requirements": [
@@ -371,6 +383,10 @@
 		[
 			"devonian_meadow",
 			"devonian_creek_meadow"
+		],
+		[
+			"devonian_conulariid",
+			"devonian_conulariid_land"
 		]
 	]
 }

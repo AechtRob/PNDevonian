@@ -75,6 +75,8 @@ public class GenLayerDevonianRiverMix extends GenLayer
     public int DEVONIAN_OCEAN_ALGAE_ID = Biome.getIdForBiome(DEVONIAN_OCEAN_ALGAE);
     public Biome DEVONIAN_CONULARIID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_conulariid"));
     public int DEVONIAN_CONULARIID_ID =  Biome.getIdForBiome(DEVONIAN_CONULARIID);
+    public Biome DEVONIAN_CONULARIID_LAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:devonian_conulariid_land"));
+    public int DEVONIAN_CONULARIID_LAND_ID =  Biome.getIdForBiome(DEVONIAN_CONULARIID_LAND);
 
     public GenLayerDevonianRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -143,6 +145,9 @@ public class GenLayerDevonianRiverMix extends GenLayer
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Brackish) {
                             aint2[i] = DEVONIAN_CREEK_BRACKISH_ID;
+                        }
+                        else if (aint[i] == DEVONIAN_CONULARIID_LAND_ID) {
+                            aint2[i] = DEVONIAN_CONULARIID_ID;
                         }
                         else if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
                             aint2[i] = DEVONIAN_CREEK_COAST_ID;

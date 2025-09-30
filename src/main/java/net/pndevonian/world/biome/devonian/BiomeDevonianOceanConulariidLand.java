@@ -19,10 +19,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeDevonianOceanConulariid extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:devonian_conulariid")
+public class BiomeDevonianOceanConulariidLand extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:devonian_conulariid_land")
 	public static final BiomeGenCustom biome = null;
-	public BiomeDevonianOceanConulariid(ElementsLepidodendronMod instance) {
+	public BiomeDevonianOceanConulariidLand(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -40,8 +40,8 @@ public class BiomeDevonianOceanConulariid extends ElementsLepidodendronMod.ModEl
 
 	static class BiomeGenCustom extends BiomeDevonian {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Devonian Polar Shore").setRainfall(0.5F).setBaseHeight(-0.375F).setHeightVariation(0.00F).setTemperature(0.95F));
-			setRegistryName("lepidodendron:devonian_conulariid");
+			super(new BiomeProperties("Devonian Polar Shore").setRainfall(0.5F).setBaseHeight(-0.075F).setHeightVariation(0.00F).setTemperature(0.95F));
+			setRegistryName("lepidodendron:devonian_conulariid_land");
 			topBlock = BlockClayBrown.block.getDefaultState();
 			this.fillerBlock = Blocks.GRAVEL.getStateFromMeta(0);
 			decorator.treesPerChunk = -999;
@@ -77,7 +77,7 @@ public class BiomeDevonianOceanConulariid extends ElementsLepidodendronMod.ModEl
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
 
-			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
 				if (rand.nextInt(4) == 0)
 				{

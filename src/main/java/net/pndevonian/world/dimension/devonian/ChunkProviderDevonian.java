@@ -378,7 +378,8 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                         d3 = d4;
                     }
 
-                    if (biome == BiomeDevonianOceanConulariid.biome) {
+                    if (biome == BiomeDevonianOceanConulariid.biome
+                        || biome == BiomeDevonianOceanConulariidLand.biome) {
                         //Flatten these out:
                         d4 = 0D;
                         d2 = d4;
@@ -626,6 +627,14 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeDevonianOceanConulariid.biome
+                                || biome == BiomeDevonianOceanConulariidLand.biome
+                        ) {
+                            if (rand.nextInt(10) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                        }
+
                         //For the Table mountains biome, make tops mossy and cracked a bit drier:
                         if (biome == BiomeDevonianSpikes.biome
                         ) {
@@ -733,9 +742,10 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                     chunkPrimerIn.setBlockState(i1, j1, l, BlockPeat.block.getDefaultState());
                                 }
                             }
-                            else if (biome == BiomeDevonianOceanConulariid.biome) {
+                            else if (biome == BiomeDevonianOceanConulariid.biome
+                                || biome == BiomeDevonianOceanConulariidLand.biome) {
                                 if (j1 <= SEALEVEL - 1) {
-                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockSandWavy.block.getDefaultState());
+                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockClayBrown.block.getDefaultState());
                                     if (rand.nextInt(8) == 0) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, BlockSandGreyWavy.block.getDefaultState());
                                     }
@@ -745,10 +755,13 @@ public class ChunkProviderDevonian implements IChunkGenerator {
                                         }
                                     }
                                     if (rand.nextInt(5) <= 1) {
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockSandRedWavy.block.getDefaultState());
+                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockPebblestone.block.getDefaultState());
                                     }
                                     if (rand.nextInt(3) == 0) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
+                                    }
+                                    if (rand.nextInt(24) == 0) {
+                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockCarboniferousMud.block.getDefaultState());
                                     }
                                 }
                             }

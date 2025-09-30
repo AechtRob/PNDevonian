@@ -55,6 +55,7 @@ public class GenLayerDevonian {
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 
         biomes = new GenLayerDevonianBeach(1050L, biomes);
+        biomes = new GenLayerDiversifyPolar(5550L, biomes);
         biomes = new GenLayerSmooth(705L, biomes);
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
 
