@@ -89,6 +89,7 @@ public class BiomeDevonianCreekLycopsidSpinney extends ElementsLepidodendronMod.
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
 		protected static final WorldGenTreeLog LEPTOPHLOEUM_LOG_GENERATOR = new WorldGenTreeLog(BlockLeptophloeumLog.block);
 		protected static final WorldGenTreeLog ARCHAEOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockArchaeopterisLog.block);
+		protected static final WorldGenTreeLogWater LEPTOPHLOEUM_LOG_WATER_GENERATOR = new WorldGenTreeLogWater(BlockLeptophloeumLog.block);
 
 		protected static final WorldGenSublepidodendron SUBLEPIDODENDRON_GENERATOR = new WorldGenSublepidodendron();
 		protected static final WorldGenOmprelostrobus OMPRELOSTROBUS_GENERATOR = new WorldGenOmprelostrobus();
@@ -108,8 +109,6 @@ public class BiomeDevonianCreekLycopsidSpinney extends ElementsLepidodendronMod.
 		@Override
 	    public void decorate(World worldIn, Random rand, BlockPos pos)
 	    {
-
-
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 			{
@@ -137,6 +136,19 @@ public class BiomeDevonianCreekLycopsidSpinney extends ElementsLepidodendronMod.
 					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
 					if (Math.random() > 0.5) {
 						LEPTOPHLOEUM_LOG_GENERATOR.generate(worldIn, rand, blockpos);
+					}
+				}
+			}
+
+		if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			{
+				for (int j = 0; j < 12; ++j)
+				{
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(16) + 8;
+					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+					if (Math.random() > 0.5) {
+						LEPTOPHLOEUM_LOG_WATER_GENERATOR.generate(worldIn, rand, blockpos);
 					}
 				}
 			}
